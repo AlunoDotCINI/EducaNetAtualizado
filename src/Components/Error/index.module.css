@@ -1,0 +1,20 @@
+.corpo{
+  display: flex;
+  align-items: center;
+  padding: 40px;
+}
+.texto{
+    display:flex;
+    flex-direction: column;
+}
+.titulo{
+    color: white;
+    font-size: 35px;
+}
+.subtitulo{
+    color: white;
+    font-size: 25px;
+}
+.span{
+    color: #2196f3;
+}

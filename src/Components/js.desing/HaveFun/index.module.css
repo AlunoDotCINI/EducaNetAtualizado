@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
+;
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+.corpo{
+    margin-top: 140px;
+    display: flex;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 80px;
+}
+.coluna1{
+    display: flex;
+    flex-direction: column;
+    margin-right: 90px;
+}
+.span{
+    color: #00A3FF;
+}
+.Titulo{
+    font-size: 65px;
+    color: #00A3FF;
+    font-family: "VT323", monospace;
+
+}
+.Subtitulo{
+    font-size: 18px;
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+}
+.texto{
+    color: #ffffff;
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+    font-weight:300;
+}
+.Img{
+    width: 480px;
+    height: 380px;
+
+    border-radius: 30px;
+}

@@ -1,0 +1,11 @@
+::-webkit-scrollbar{
+    -webkit-animation-delay: 2s;
+    background-color: #1797ff;
+    border-radius: 10px 0px 0px 10px;
+    color: #000000;
+
+}
+body::-webkit-scrollbar-thumb {
+    background-color: #02195a;    /* color of the scroll thumb */
+    border-radius: 9px 0px 0px 9px;
+  }

@@ -1,0 +1,15 @@
+.corpo{
+    background-color: black;
+    color: #00A3FF;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 40px;
+ 
+}
+.Titulo{
+    font-size: 27px;
+}
+.Subtitulo{
+    font-size: 23px;
+}

@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
+;
+.Imagem{
+width: 1108px;
+height:600px;
+-webkit-filter: blur(1px);
+-moz-filter: blur(1px);
+-o-filter: blur(1px);
+-ms-filter: blur(1px);
+filter: blur(2px);
+
+}
+.conteiner{
+position: relative;
+
+}
+.txt-geral{
+flex-direction: column;
+}
+.texto{    
+    position: absolute;
+    top: 200px;
+    margin-left: 25px;
+    font-size: 60px;
+    color: #000000;
+    font-family: "Poppins", sans-serif;
+    font-weight: bolder;}
+
+.subtexto{
+    position: absolute;
+    top: 250px;
+    margin-left: 30px;
+    font-size:60px;
+    color: #000000;
+    font-family: "Poppins", sans-serif;
+    font-weight: bolder;
+
+}
+.botao{
+    align-items: center;
+    position: absolute;
+    top: 330px;
+    margin-left: 30px;
+    font-size:25px;
+    color: #000000;
+    background-color: #00A3FF;
+    font-family: "Poppins", sans-serif;
+    border-style: none;
+    border-radius: 35px;
+    height: 45px;
+    width: 320px;
+    font-weight: bolder;
+    display: flex;
+    background: linear-gradient(90deg, #3f51b5, transparent) #2196f3;
+    font-family: inherit;
+    transition: background-color 1s;
+    place-content: center;
+  }
+  .botao:hover, .botao:focus {
+    background-color: #02195a;
+    color: #fff;
+  }
