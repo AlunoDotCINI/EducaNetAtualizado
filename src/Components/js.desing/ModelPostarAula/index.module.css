@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 .modalcorpo {
-    background-color: #1997fd;
-    width: 760px;
-    height: 520px;
+    background-color: #030226;
+    width: 960px;
+    height: 720px;
     position: absolute;
     top: 44px;
     z-index: 35;
@@ -15,12 +15,13 @@
 }
 .fechar{
     color: #fff;
-    z-index: 40;
+    z-index: 0;
     cursor: pointer;
     font-size: 15px;
     font-weight: 300;
     margin: 10px;
-    padding-right: 600px;
+    position: absolute;
+    left: 2px;
 }
 .titulo {
     color: #ffffff;
@@ -32,10 +33,11 @@
 
 .estruturacard {
     display: flex;
-
 }
 
-
+.pai{
+    margin-bottom: 80px;
+}
 .tituloconteiner {
     color: #ffffff;
     align-items: center;
@@ -59,7 +61,7 @@
 }
 
 .botaoeditar {
-    background-color: #03175a;
+    background-color: #0bcf8e;
     color: white;
     border-style: none;
     height: 20px;
@@ -76,10 +78,10 @@
     height: 20px;
 }
 .conteinerpostar {
-    width: 330px;
-    height: 450px;
-    background-color: #1997fd;
-    z-index: 40;
+    width: 430px;
+    height: 550px;
+    background-color: #080636;
+    z-index: 0;
     top: 5px;
     margin: 5px;
     color: #ffffff;
@@ -87,8 +89,8 @@
     flex-direction: column;
     padding: 4px;
     align-items: center;
-    border: 2px solid #00071f;
-    border-radius: 2px;
+    text-align: center;
+    border-radius: 12px 44px;
 }
 .tabela{
     background-color: #ffffff;
@@ -98,6 +100,10 @@
     width: 90%;
     height: 30px;
     border-radius: 14px;
+}
+.tabelahora{
+    width: 60px;
+    height: 30px;
 }
 .texto{
     color: #ffffff;
@@ -109,7 +115,7 @@
   background-color: #ffffff;
   color: #000000;
   padding: 5px;
-  width: 290px;
+  width: 400px;
   height: 60px;
   display: block;
   resize: none;

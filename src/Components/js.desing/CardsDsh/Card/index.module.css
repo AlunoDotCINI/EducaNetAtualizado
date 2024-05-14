@@ -3,8 +3,8 @@
   cursor: pointer;
   position: relative;
   color: white;
-  width: 260px;
-  height: 250px;
+  width: 560px;
+  height: 410px;
   border-radius: 20px;
   margin: 10px;
 }
@@ -39,7 +39,7 @@
   }
   
   .texto {
-    inset: auto auto 35px 20px;
+    inset: auto auto 75px 20px;
     color :#ffffff;
     font-size: 15px;
   }
@@ -50,13 +50,13 @@
     text-decoration: none;
     background-color: #00A3FF;
     border-style: none;
-    width: 160px;
-    height: 30px;
+    width: 260px;
+    height: 40px;
     cursor: pointer;
   }
   
   &:hover .titulo {
-    inset: auto auto 80px 20px;
+    inset: auto auto 100px 20px;
   }
   
   &:hover .texto, &:hover .botao {

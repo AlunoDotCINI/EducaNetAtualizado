@@ -1,15 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 .modalcorpo{
-    width: 300px;
-    height: 300px;
-    background-color: #03175a;
+    width:430px;
+    height: 560px;
+    background-color: #051342;
     position: absolute;
-    border-radius: 10px;
-    z-index:48;
+    border-radius: 20px;
+    z-index:2;
     align-items: center;
     text-align: center;
     padding: 5px;
+    top: 100px;
+    left: 30px;
 }
 .conteinerpostarTitulo{
     font-size: 25px;
@@ -23,12 +25,16 @@
 
 }
 .tabela{
-    width: 220px;
-    height: 20px;
+    width: 420px;
+    height: 40px;
     margin: 3px;
     border-radius: 10px;
     border-style: none;
 
+}
+.tabelahora{
+    width: 40px;
+    height: 30px;
 }
 .texto{
     font-size: 23px;
@@ -36,12 +42,12 @@
 
 }
 .descricao{
-    width: 220px;
+    width: 410px;
     margin-bottom: 3px;
     background-color: #ffffff;
     color: #000000;
     padding: 5px;
-    height: 60px;
+    height: 90px;
     display: block;
     resize: none;
 }
@@ -51,8 +57,8 @@
     margin-top: 3px;
     background-color: #1997fd;
     color: #ffffff;
-    width: 200px;
-    height: 30px;
+    width: 340px;
+    height: 50px;
     border-style: none;
     border-radius: 20px;
 }

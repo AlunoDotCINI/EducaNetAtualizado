@@ -17,7 +17,7 @@ export default function CardsGeral(params){
                 </div>
                 <div className={style.CardDois}>
                     <button className={style.acao}onClick={()=> setOpenModal(true)}>{params.acao}</button>
-                    <ModalPostClass titulo="Poste ou Edite Atividades" isOpen={openModal} setModalOpen={()=> setOpenModal(!openModal)}/>
+                    <ModalPostClass className={style.modal} txt="nao da certo"isOpen={openModal} setModalOpen={()=> setOpenModal(!openModal)}/>
                 </div>
             </div>
             <div className={style.CardTres}>

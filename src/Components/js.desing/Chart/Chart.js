@@ -1,4 +1,3 @@
-import style from './index.module.css'
 import React, { Component } from 'react';
 import Chart from 'react-apexcharts'
 

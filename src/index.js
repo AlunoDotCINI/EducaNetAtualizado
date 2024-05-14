@@ -5,11 +5,11 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
-import Alunos from './Components/js.desing/ListOpitions/index'
+import List from './Components/js.desing/ListOpitions/index'
 import Landing from './Components/LandingPage/Lading';
 import HomeStudents from './Components/js.desing/HomeStudents/index';
 import CardsGeral from './Components/js.desing/CardsGeral';
-
+import Alunos from './Components/js.desing/CardsAlunos/index.js';
 import PrivateRoute from './Routes/PrivateRoute.js'
 
 import ErrorPage from './Components/Error/ErrorPage.js';
@@ -25,7 +25,7 @@ const router = createBrowserRouter([
     },
     {
       path:"/teacher",
-       element:<PrivateRoute><Alunos/></PrivateRoute>,
+       element:<PrivateRoute><List/></PrivateRoute>,
        children:[
         {
           path:"/teacher",
@@ -35,7 +35,23 @@ const router = createBrowserRouter([
           path:"/teacher/class",
        element: <CardsGeral NomeCardUm="Cursos Criados" acao="Postar ou Editar Atividades" NomeCardDois="Grafico de Alunos"/>
         }
+        
        ]
+    },
+    {
+      path:"/students",
+      element:<PrivateRoute><List/></PrivateRoute>,
+      children:[
+        {
+          path:"/students",
+       element: <HomeStudents/>
+        },
+        {
+          path:"/students/class",
+       element: <Alunos NomeCardUm="Cursos Criados" acao="Postar ou Editar Atividades" NomeCardDois="Grafico de Alunos"/>
+        }
+      ]
+   
     }
    ]
   }
