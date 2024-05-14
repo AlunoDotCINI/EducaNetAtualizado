@@ -7,9 +7,9 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import List from './Components/js.desing/ListOpitions/index'
 import Landing from './Components/LandingPage/Lading';
-import HomeStudents from './Components/js.desing/HomeStudents/index';
-import CardsGeral from './Components/js.desing/CardsGeral';
-import Alunos from './Components/js.desing/CardsAlunos/index.js';
+import HomeStudents from './Components/js.desing/HomeDash/index';
+import CardsGeral from './Components/js.desing/ProfessorDash';
+import Alunos from './Components/js.desing/AlunosDash/index.js'
 import PrivateRoute from './Routes/PrivateRoute.js'
 
 import ErrorPage from './Components/Error/ErrorPage.js';

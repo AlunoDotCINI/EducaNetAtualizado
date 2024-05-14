@@ -2,19 +2,19 @@ import React from 'react'
 import style from './index.module.css'
 import Editar from './ModalEdite/index'
 import { useState } from 'react'
-export default function ModalPostClass( {isOpen, setModalOpen},paramss ) {
+export default function ModalPostClass( {isOpen, setModalOpen},params ) {
     const [openModal, settOpenModal] = useState(false)
 
     if (isOpen) {
         return (
             <section className={style.modalcorpo}>
                 <div className={style.pai}>
-                <h1 className={style.titulo}>{paramss.titulo}</h1>
+                <h1 className={style.titulo}>{params.titulo}</h1>
                 <h1 className={style.fechar} onClick={setModalOpen}>FECHAR</h1>
                 </div>
                 <div className={style.estruturacard}>
                     <div className={style.conteinerpostar}>
-                        <a className={style.tituloconteiner}>{paramss.txt}</a>
+                        <a className={style.tituloconteiner}>{params.txt}</a>
                         <div className={style.atividadesconteiner}>
                             <a className={style.tituloatvconteiner}> ATIVIDADE</a>
                             <button className={style.botaoeditar} onClick={() => settOpenModal(true)}>Editar</button>
