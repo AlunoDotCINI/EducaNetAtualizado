@@ -1,4 +1,4 @@
-
+import style from './index.module.css'
 import React, { Component } from 'react';
 import Chart from 'react-apexcharts'
 
@@ -8,9 +8,11 @@ class Donut extends Component {
     super(props);
 
     this.state = {
-      options: {},
+      options: { },
       series: [44, 55, 41, 17, 15],
-      labels: ['A', 'B', 'C', 'D', 'E']
+      labels: ['A', 'B', 'C', 'D', 'E'],
+    
+
     }
   }
 
@@ -18,7 +20,7 @@ class Donut extends Component {
 
     return (
       <div className="donut">
-        <Chart options={this.state.options} series={this.state.series} type="donut" width="480" />
+        <Chart size="50" options={this.state.options} series={this.state.series} type="donut"  width="680" height={690} />
       </div>
     );
   }

@@ -8,7 +8,7 @@
 }
 .table{
     width: 225px;
-    height:590px;
+    height:890px;
     background-color: #1997fd ;
     display: flex;
     flex-direction: column;
@@ -58,7 +58,7 @@
 
 }
 .perfil{
-    margin-top: 200px;
+    margin-top: 500px;
     color: #ffffff;
     text-transform: uppercase;
 }

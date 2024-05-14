@@ -16,8 +16,8 @@
 }
 .CardUm{
     background-color: #00A3FF;
-    width: 260px;
-    height:420px;
+    width: 360px;
+    height:630px;
 
     margin: 0 auto;
     overflow-y: auto;
@@ -59,8 +59,8 @@
     border-radius: 10px;
     align-items: center;
     border-style: none;
-    width: 240px;
-    height: 40px;
+    width: 360px;
+    height: 50px;
     color: #ffffff;
 }
 .acao:hover, .acao:focus {
@@ -73,14 +73,14 @@
     background-color: #00A3FF;
     border-radius: 15px;
     align-items: center;
-    width: 470px;
-    height: 520px;
+    width: 870px;
+    height: 780px;
     margin: 0 auto;
 }
 .itens{
     background-color: #ffffff;
     border-radius: 20px;
-    padding: 15px 120px;
+    padding: 25px 120px;
     margin-bottom: 15px;
 }
 .NomeCardDois{
@@ -92,5 +92,6 @@
     text-transform: uppercase;
 }
 .grafico{
-    position: relative;
+    text-align: center;
+    size: 20px;
 }

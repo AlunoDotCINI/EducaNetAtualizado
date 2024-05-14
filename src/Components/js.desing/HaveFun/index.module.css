@@ -18,25 +18,25 @@
     color: #00A3FF;
 }
 .Titulo{
-    font-size: 65px;
+    font-size: 85px;
     color: #00A3FF;
     font-family: "VT323", monospace;
 
 }
 .Subtitulo{
-    font-size: 18px;
+    font-size: 24px;
     color: #ffffff;
     font-family: "Poppins", sans-serif;
 }
 .texto{
     color: #ffffff;
-    font-size: 15px;
+    font-size: 2,px;
     font-family: "Poppins", sans-serif;
     font-weight:300;
 }
 .Img{
-    width: 480px;
-    height: 380px;
+    width: 580px;
+    height: 400px;
 
     border-radius: 30px;
 }

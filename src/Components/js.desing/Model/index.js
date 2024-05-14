@@ -29,9 +29,9 @@ export const Container = styled.div`
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   position: absolute;
   overflow: hidden;
-  width: 678px;
+  width: 1200px;
   max-width: 100%;
-  min-height: 400px;
+  min-height: 700px;
   top:100px;
   left:200px;
 `;
@@ -103,7 +103,7 @@ export const Form = styled.form`
 export const Title = styled.h1`
   font-weight: bold;
   margin: 0;
-  font-size:25px;
+  font-size:35;
 `;
 
 export const Input = styled.input`
@@ -112,6 +112,7 @@ export const Input = styled.input`
   padding: 8px 11px;
   margin: 4px 0;
   width: 100%;
+  min-height:40px;
 `;
 export const Divcheck = styled.div`
     display:flex;
@@ -126,7 +127,7 @@ font-size:15px;
 `
 
 export const subtitule = styled.h2`
- font-size: 10px;
+ font-size: 15px;
 `
 
 export const Button = styled.button`
@@ -137,7 +138,7 @@ export const Button = styled.button`
   color: #ffffff;
   font-size: 12px;
   font-weight: bold;
-  padding: 12px 45px;
+  padding: 15px 95px;
   letter-spacing: 1px;
   text-transform: uppercase;
   transition: transform 80ms ease-in;
@@ -218,7 +219,7 @@ export const RightOverlayPanel = styled(OverlayPanel)`
   ${props => (props.signingIn !== true ? `transform: translateX(20%);` : null)}
 `;
 export const Paragraph = styled.p`
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 300;
   line-height: 20px;
   letter-spacing: 0.5px;
