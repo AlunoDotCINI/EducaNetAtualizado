@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+.conteudo{
+  display: flex;
+  padding-top: 10px;
+  align-items: center;
+}
+.titulo{
+    font-size: 40px;
+    
+}
+.conteudocards{
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+    
+}
+.CardUm{
+    background-color: #00A3FF;
+    width: 360px;
+    height:630px;
+
+    margin: 0 auto;
+    overflow-y: auto;
+    box-sizing: content-box;
+    padding: 30px 10px  ;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    border-radius: 10px 10px 10px 10px
+}
+.CardUm::-webkit-scrollbar{
+    -webkit-animation-delay: 2s;
+    background-color: #ffffff;
+    border-radius: 0px 10px 10px 0px;
+}
+.CardUm::-webkit-scrollbar-thumb {
+    background-color: #02195a;    /* color of the scroll thumb */
+    border-radius: 0px 9px 9px 0px;
+  }
+.nome{
+    color: white;
+    font-family: "VT323", monospace;
+    position: relative;
+    font-size: 35px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.CardDois{
+    margin-top: 30px;
+    padding: 10px 15px;
+    background-color: #00A3FF;
+    border-radius: 15px;
+    text-align: center;
+    
+}
+.acao{
+    background: linear-gradient(90deg, #3f51b5, transparent) #031138;
+    border-radius: 10px;
+    align-items: center;
+    border-style: none;
+    width: 360px;
+    height: 50px;
+    color: #ffffff;
+}
+.acao:hover, .acao:focus {
+    background-color: #0e48e6;
+    color: #fff;
+    transition: 2s
+    ;
+  }
+.CardTres{
+    background-color: #00A3FF;
+    border-radius: 15px;
+    align-items: center;
+    width: 870px;
+    height: 780px;
+    margin: 0 auto;
+}
+.itens{
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 25px 120px;
+    margin-bottom: 15px;
+}
+.NomeCardDois{
+    color: #ffffff;
+    font-family: "VT323", monospace;
+    font-size: 60px;
+    padding-bottom: 50px;
+    padding-left: 5px;
+    text-transform: uppercase;
+}
+.grafico{
+    text-align: center;
+    size: 20px;
+}

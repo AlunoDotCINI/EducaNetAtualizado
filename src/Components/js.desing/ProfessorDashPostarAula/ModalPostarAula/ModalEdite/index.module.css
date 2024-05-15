@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+.modalcorpo{
+    width:430px;
+    height: 560px;
+    background-color: #051342;
+    position: absolute;
+    border-radius: 20px;
+    z-index:2;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+    top: 100px;
+    left: 30px;
+}
+.conteinerpostarTitulo{
+    font-size: 25px;
+    font-family: "VT323", monospace;
+
+}
+.fomulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.tabela{
+    width: 420px;
+    height: 40px;
+    margin: 3px;
+    border-radius: 10px;
+    border-style: none;
+
+}
+.tabelahora{
+    width: 40px;
+    height: 30px;
+}
+.texto{
+    font-size: 23px;
+    font-family: "VT323", monospace;
+
+}
+.descricao{
+    width: 410px;
+    margin-bottom: 3px;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 5px;
+    height: 90px;
+    display: block;
+    resize: none;
+}
+
+
+.botaopostar{
+    margin-top: 3px;
+    background-color: #1997fd;
+    color: #ffffff;
+    width: 340px;
+    height: 50px;
+    border-style: none;
+    border-radius: 20px;
+}
+.fechar{
+    color: #fff;
+    z-index: 40;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 300;
+    margin: 10px;
+    padding-right: 600px;
+}

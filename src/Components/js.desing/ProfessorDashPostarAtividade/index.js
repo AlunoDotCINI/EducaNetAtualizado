@@ -1,9 +1,9 @@
-import Chart from "../Chart/Chart"
+import Chart from "../ChartPostarAtividade/Chart"
 import style from "./index.module.css"
-import ModalPostClass from "../ModelPostarAula"
+import ModalPostClass from "./ModalPostarAula/index"
 import { useState } from 'react';
 
-export default function CardsGeral(params){
+export default function PostActivity(params){
     const [openModal,setOpenModal] = useState(false) 
     return (
         <section className={style.conteudo}>
@@ -17,7 +17,7 @@ export default function CardsGeral(params){
                 </div>
                 <div className={style.CardDois}>
                     <button className={style.acao}onClick={()=> setOpenModal(true)}>{params.acao}</button>
-                    <ModalPostClass className={style.modal} txt="nao da certo"isOpen={openModal} setModalOpen={()=> setOpenModal(!openModal)}/>
+                    <ModalPostClass className={style.modal} txt="nao da certo"  titulo="nao da certo"isOpen={openModal} setModalOpen={()=> setOpenModal(!openModal)}/>
                 </div>
             </div>
             <div className={style.CardTres}>

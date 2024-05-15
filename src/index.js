@@ -7,9 +7,11 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import List from './Components/js.desing/ListOpitions/index'
 import Landing from './Components/LandingPage/Lading';
-import HomeStudents from './Components/js.desing/HomeDash/index';
-import CardsGeral from './Components/js.desing/ProfessorDash';
-import Alunos from './Components/js.desing/AlunosDash/index.js'
+import Home from './Components/js.desing/HomeDash/index';
+import ProfessorActivity from './Components/js.desing/ProfessorDashPostarAtividade'
+import ProfessorClass from './Components/js.desing/ProfessorDashPostarAula';
+import ActivityAluno from './Components/js.desing/AlunoVerAtividadeDash/index.js' 
+import AlunosClass from './Components/js.desing/AlunoDashVerAula'
 import PrivateRoute from './Routes/PrivateRoute.js'
 
 import ErrorPage from './Components/Error/ErrorPage.js';
@@ -29,13 +31,16 @@ const router = createBrowserRouter([
        children:[
         {
           path:"/teacher",
-       element: <HomeStudents/>
+       element: <Home/>
         },
         {
           path:"/teacher/class",
-       element: <CardsGeral NomeCardUm="Cursos Criados" acao="Postar ou Editar Atividades" NomeCardDois="Grafico de Alunos"/>
+       element: <ProfessorClass NomeCardUm="Cursos Criados" acao="Postar ou Editar Atividades" NomeCardDois="Grafico de Alunos"/>
+        },
+        {
+          path:"/teacher/activity",
+       element: <ProfessorActivity NomeCardUm="Cursos Criados" acao="Postar ou Editar Atividades" NomeCardDois="Grafico de Alunos"/>
         }
-        
        ]
     },
     {
@@ -44,11 +49,15 @@ const router = createBrowserRouter([
       children:[
         {
           path:"/students",
-       element: <HomeStudents/>
+       element: <Home/>
         },
         {
           path:"/students/class",
-       element: <Alunos NomeCardUm="Cursos Criados" acao="Postar ou Editar Atividades" NomeCardDois="Grafico de Alunos"/>
+       element: <AlunosClass NomeCardUm="Cursos Criados" acao="Postar ou Editar Atividades" NomeCardDois="Grafico de Alunos"/>
+        },
+        {
+          path:"/students/activity",
+          element:<ActivityAluno/>
         }
       ]
    

@@ -2,7 +2,7 @@ import React from 'react'
 import style from './index.module.css'
 import Editar from './ModalEdite/index'
 import { useState } from 'react'
-export default function ModalPostClass( {isOpen, setModalOpen},params ) {
+export default function ModalPostClass( {isOpen, setModalOpen,params} ) {
     const [openModal, settOpenModal] = useState(false)
 
     if (isOpen) {
