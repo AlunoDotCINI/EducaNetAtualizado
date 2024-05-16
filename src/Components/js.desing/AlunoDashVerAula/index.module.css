@@ -81,8 +81,9 @@
 .itens{
     background-color: #ffffff;
     border-radius: 20px;
-    padding: 25px 120px;
+    padding: 20px 120px;
     margin-bottom: 15px;
+    text-align: center;
 }
 .NomeCardDois{
     color: #ffffff;

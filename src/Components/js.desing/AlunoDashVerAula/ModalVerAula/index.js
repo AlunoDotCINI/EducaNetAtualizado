@@ -1,40 +1,38 @@
 import React from 'react'
 import style from './index.module.css'
-import Editar from './ModalIrParaAula/index'
+import Editar from './ModalIrParaCurso/index'
 import { useState } from 'react'
-export default function ModalPostClass( {isOpen, setModalOpen,params} ) {
+import { Link } from 'react-router-dom'
+
+export default function ModalPostClass({ isOpen, setModalOpen }) {
     const [openModal, settOpenModal] = useState(false)
 
     if (isOpen) {
         return (
             <section className={style.modalcorpo}>
-                <div className={style.pai}>
-                <h1 className={style.titulo}>{params.titulo}</h1>
                 <h1 className={style.fechar} onClick={setModalOpen}>FECHAR</h1>
+                <div className={style.paititulo}>
+                    <h1 className={style.titulo}>Ver Aulas</h1>
                 </div>
                 <div className={style.estruturacard}>
-                    <div className={style.conteinerpostar}>
-                        <a className={style.tituloconteiner}>{params.txt}</a>
-                        <div className={style.atividadesconteiner}>
-                            <a className={style.tituloatvconteiner}> ATIVIDADE</a>
-                            <button className={style.botaoeditar} onClick={() => settOpenModal(true)}>Editar</button>
-                            <Editar className={style.Modal} titulo="Poste ou Edite Atividades" isOpenn={openModal} settModalOpen={() => settOpenModal(!openModal)} />
-                            <button className={style.botaoapagar}>APAGAR</button>
-
+                    <div className={style.conteinerverauala}>
+                        <a className={style.tituloconteiner}> Aulas em Aberto</a>
+                        <div className={style.veraulaconteiner}>
+                            <div className={style.background}>
+                                <a className={style.aualasList}> ATIVIDADE</a>
+                            </div>
+                      <Link to ='students/class/{id}'><button className={style.botaoveraula}>Ver Aula</button></Link>
                         </div>
                     </div>
-                    <div className={style.conteinerpostar}>
-                        <h1 className={style.conteinerpostarTitulo}>POSTAR ATIVIDADES</h1>
-                        <form className={style.fomulario}>
-                        <label className={style.texto}>Horas de curso(somente inteiras)
-                                ( de 00:00 a 12:00):</label>
-                            <input className={style.tabelahora} type='time' step={3600000} min={0} max={12} />
-                            <input className={style.tabela} type='text' placeholder={params.input1} />
-                            <input className={style.tabela} type='text' placeholder={params.input2} />
-                            <textarea className={style.descricao} placeholder="descrição" maxLength={500} />
-
-                            <button className={style.botaopostar}>POSTAR</button>
-                        </form>
+                    <div className={style.conteinerverauala}>
+                        <h1 className={style.tituloconteiner}>PROCURE NOVAS AULAS</h1>
+                        <div className={style.conteinercurso}>
+                        <div className={style.background}>
+                            <a className={style.aualasList}> CURSO TAL</a>
+                        </div>
+                        <button className={style.botaosobre} onClick={() => settOpenModal(true)}>Sobre a Aula</button>
+                        <Editar className={style.Modal} titulo="Poste ou Edite Atividades" isOpenn={openModal} settModalOpen={() => settOpenModal(!openModal)} />
+                        </div>
                     </div>
                 </div>
             </section>
