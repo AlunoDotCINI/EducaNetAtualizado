@@ -1,6 +1,5 @@
 import React from 'react'
 import style from './index.module.css'
-import VerCursos from './ModalIrParaCurso/index'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -16,24 +15,15 @@ export default function ModalPostClass({ isOpen, setModalOpen }) {
                 </div>
                 <div className={style.estruturacard}>
                     <div className={style.conteinerverauala}>
-                        <a className={style.tituloconteiner}> Aulas em Aberto</a>
+                        <a className={style.tituloconteiner}>Video-Aulas em Aberto</a>
                         <div className={style.veraulaconteiner}>
-                            <div className={style.background}>
-                                <a className={style.aualasList}> ATIVIDADE</a>
-                            </div>
-                      <button className={style.botaoveraula}><Link to ='/students/watch'>Ver Aula</Link></button>
+                             <a className={style.aualasList}> Aula</a>
+                            <Link to ='/students/watch'><button className={style.botaoveraula}>Ver Aula</button></Link>
                         </div>
+                        
+                        
                     </div>
-                    <div className={style.conteinerverauala}>
-                        <h1 className={style.tituloconteiner}>PROCURE NOVAS AULAS</h1>
-                        <div className={style.conteinercurso}>
-                        <div className={style.background}>
-                            <a className={style.aualasList}> CURSO TAL</a>
-                        </div>
-                        <button className={style.botaosobre} onClick={() => settOpenModal(true)}>Sobre a Aula</button>
-                        <VerCursos className={style.Modal} titulo="Poste ou Edite Atividades" isOpenn={openModal} settModalOpen={() => settOpenModal(!openModal)} />
-                        </div>
-                    </div>
+
                 </div>
             </section>
         );

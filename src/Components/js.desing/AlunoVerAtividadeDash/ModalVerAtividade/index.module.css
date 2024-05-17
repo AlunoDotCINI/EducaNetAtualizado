@@ -13,6 +13,16 @@
     flex-direction: column;
     align-items: center;
 }
+.pai{
+    margin-bottom: 80px;
+}
+.titulo {
+    color: #ffffff;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-family: "VT323", monospace;
+
+}
 .fechar{
     color: #fff;
     z-index: 0;
@@ -23,62 +33,11 @@
     position: absolute;
     left: 2px;
 }
-.titulo {
-    color: #ffffff;
-    font-size: 30px;
-    text-transform: uppercase;
-    font-family: "VT323", monospace;
-
-}
-
 .estruturacard {
     display: flex;
 }
-
-.pai{
-    margin-bottom: 80px;
-}
-.tituloconteiner {
-    color: #ffffff;
-    align-items: center;
-    margin-bottom: 30px;
-    font-size: 30px;
-    font-family: "VT323", monospace;
-    font-weight: 600;
-
-}
-
-
-.atividadesconteiner {
-    display: flex;
-    align-items: center;
-}
-
-.tituloatvconteiner {
-    font-family: "VT323", monospace;
-    font-size: 25px;
-    margin: 2px;
-}
-
-.botaoeditar {
-    background-color: #0bcf8e;
-    color: white;
-    border-style: none;
-    height: 20px;
-    width: 90px;
-    margin: 2px;
-}
-
-.botaoapagar {
-    background-color: #eb3131;
-    color: white;
-    border-style: none;
-    margin: 2px;
-    width: 90px;
-    height: 20px;
-}
 .conteinerpostar {
-    width: 430px;
+    width: 830px;
     height: 550px;
     background-color: #080636;
     top: 5px;
@@ -90,56 +49,30 @@
     align-items: center;
     text-align: center;
     border-radius: 12px 44px;
+    overflow-y: scroll;
 }
-.tabela{
-    background-color: #ffffff;
-    border: none;
-    padding: 8px 11px;
-    margin: 4px 0;
-    width: 90%;
-    height: 30px;
-    border-radius: 14px;
-}
-.tabelahora{
-    width: 60px;
-    height: 30px;
-}
-.texto{
+.tituloconteiner {
     color: #ffffff;
-    font-family: "VT323", monospace;
-    font-size: 25px;
-}
-.descricao{
-  margin:10px;
-  background-color: #ffffff;
-  color: #000000;
-  padding: 5px;
-  width: 400px;
-  height: 60px;
-  display: block;
-  resize: none;
-}
-.conteinerpostarTitulo{
-    color: #ffffff;
+    align-items: center;
+    margin-bottom: 30px;
     font-size: 30px;
     font-family: "VT323", monospace;
-    margin-bottom: 30px;
+    font-weight: 600;
 }
-.formulario{
-    background-color: #ffffff;
+.atividadesconteiner {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 50px;
-    text-align: center;
 }
-.botaopostar{
-    margin-top: 3px;
-    background-color: #03175a;
-    color: #ffffff;
-    width: 220px;
-    height: 40px;
+.tituloatvconteiner {
+    font-family: "VT323", monospace;
+    font-size: 30px;
+    margin: 2px;
+}
+.botaoirparaatv{
+    background-color: #0bcf8e;
+    color: white;
     border-style: none;
-    border-radius: 20px;
+    height: 20px;
+    width: 190px;
+    margin: 2px;
 }

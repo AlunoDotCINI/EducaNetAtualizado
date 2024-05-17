@@ -8,13 +8,19 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import List from './Components/js.desing/ListOpitions/index'
 import Landing from './Components/LandingPage/Lading';
 import Home from './Components/js.desing/HomeDash/index';
-import ProfessorActivity from './Components/js.desing/ProfessorDashPostarAtividade'
-import ProfessorClass from './Components/js.desing/ProfessorDashPostarAula';
-import ActivityAluno from './Components/js.desing/AlunoVerAtividadeDash/index.js' 
-import AlunosClass from './Components/js.desing/AlunoDashVerAula'
 import PrivateRoute from './Routes/PrivateRoute.js'
 import ErrorPage from './Components/Error/ErrorPage.js';
+
+
+import AlunosClass from './Components/js.desing/AlunoDashVerAula'
+import ActivityAluno from './Components/js.desing/AlunoVerAtividadeDash/index.js' 
 import AssistirAula from './Components/js.desing/AlunoDashVerAula/ModalVerAula/AsistirCurso/index.js';
+import VerCursos from './Components/js.desing/AlunoVerCursos/index.js'
+import IrParaAtividade from './Components/js.desing/AlunoVerAtividadeDash/ModalVerAtividade/ModaIrParaAtv/index.js'
+
+import ProfessorActivity from './Components/js.desing/ProfessorDashPostarAtividade'
+import ProfessorClass from './Components/js.desing/ProfessorDashPostarAula';
+
 const router = createBrowserRouter([
   {
    path:"/",
@@ -52,6 +58,10 @@ const router = createBrowserRouter([
        element: <Home/>
         },
         {
+          path:"/students/courses",
+          element:<VerCursos/>
+        },
+        {
           path:"/students/class",
        element: <AlunosClass NomeCardUm="Cursos Criados" acao="Postar ou Editar Atividades" NomeCardDois="Grafico de Alunos"/>,
         },   
@@ -62,6 +72,10 @@ const router = createBrowserRouter([
         {
           path:"/students/activity",
           element:<ActivityAluno/>
+        },
+        {
+          path:"/students/goactivity",
+          element:<IrParaAtividade/>
         }
       ]
    
