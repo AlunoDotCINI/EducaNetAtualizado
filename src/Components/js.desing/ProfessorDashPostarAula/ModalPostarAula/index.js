@@ -2,19 +2,19 @@ import React from 'react'
 import style from './index.module.css'
 import Editar from './ModalEdite/index'
 import { useState } from 'react'
-export default function ModalPostClass( {isOpen, setModalOpen,params} ) {
+export default function ModalPostClass( {isOpen, setModalOpen,} ) {
     const [openModal, settOpenModal] = useState(false)
 
     if (isOpen) {
         return (
             <section className={style.modalcorpo}>
                 <div className={style.pai}>
-                <h1 className={style.titulo}>{params.titulo}</h1>
+                <h1 className={style.titulo}>{}</h1>
                 <h1 className={style.fechar} onClick={setModalOpen}>FECHAR</h1>
                 </div>
                 <div className={style.estruturacard}>
                     <div className={style.conteinerpostar}>
-                        <a className={style.tituloconteiner}>{params.txt}</a>
+                        <a className={style.tituloconteiner}>{}</a>
                         <div className={style.atividadesconteiner}>
                             <a className={style.tituloatvconteiner}> ATIVIDADE</a>
                             <button className={style.botaoeditar} onClick={() => settOpenModal(true)}>Editar</button>
@@ -29,8 +29,8 @@ export default function ModalPostClass( {isOpen, setModalOpen,params} ) {
                         <label className={style.texto}>Horas de curso(somente inteiras)
                                 ( de 00:00 a 12:00):</label>
                             <input className={style.tabelahora} type='time' step={3600000} min={0} max={12} />
-                            <input className={style.tabela} type='text' placeholder={params.input1} />
-                            <input className={style.tabela} type='text' placeholder={params.input2} />
+                            <input className={style.tabela} type='text'  />
+                            <input className={style.tabela} type='text'  />
                             <textarea className={style.descricao} placeholder="descrição" maxLength={500} />
 
                             <button className={style.botaopostar}>POSTAR</button>
