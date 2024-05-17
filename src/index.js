@@ -13,8 +13,8 @@ import ProfessorClass from './Components/js.desing/ProfessorDashPostarAula';
 import ActivityAluno from './Components/js.desing/AlunoVerAtividadeDash/index.js' 
 import AlunosClass from './Components/js.desing/AlunoDashVerAula'
 import PrivateRoute from './Routes/PrivateRoute.js'
-import AsssitirAula from './Components/js.desing/AlunoDashVerAula/ModalVerAula/AsistirCurso/index.js'
 import ErrorPage from './Components/Error/ErrorPage.js';
+import AssistirAula from './Components/js.desing/AlunoDashVerAula/ModalVerAula/AsistirCurso/index.js';
 const router = createBrowserRouter([
   {
    path:"/",
@@ -53,14 +53,11 @@ const router = createBrowserRouter([
         },
         {
           path:"/students/class",
-       element: <AlunosClass NomeCardUm="Cursos Criados" acao="Postar ou Editar Atividades" NomeCardDois="Grafico de Alunos"/>
-       ,children:[
+       element: <AlunosClass NomeCardUm="Cursos Criados" acao="Postar ou Editar Atividades" NomeCardDois="Grafico de Alunos"/>,
+        },   
         {
-          path:"students/class/{id}",
-          element:<AsssitirAula/>
-
-        }
-       ]
+            path:"/students/watch",
+            element:<AssistirAula/>
         },
         {
           path:"/students/activity",

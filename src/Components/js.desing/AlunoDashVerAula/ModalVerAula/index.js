@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './index.module.css'
-import Editar from './ModalIrParaCurso/index'
+import VerCursos from './ModalIrParaCurso/index'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -21,7 +21,7 @@ export default function ModalPostClass({ isOpen, setModalOpen }) {
                             <div className={style.background}>
                                 <a className={style.aualasList}> ATIVIDADE</a>
                             </div>
-                      <Link to ='students/class/{id}'><button className={style.botaoveraula}>Ver Aula</button></Link>
+                      <button className={style.botaoveraula}><Link to ='/students/watch'>Ver Aula</Link></button>
                         </div>
                     </div>
                     <div className={style.conteinerverauala}>
@@ -31,7 +31,7 @@ export default function ModalPostClass({ isOpen, setModalOpen }) {
                             <a className={style.aualasList}> CURSO TAL</a>
                         </div>
                         <button className={style.botaosobre} onClick={() => settOpenModal(true)}>Sobre a Aula</button>
-                        <Editar className={style.Modal} titulo="Poste ou Edite Atividades" isOpenn={openModal} settModalOpen={() => settOpenModal(!openModal)} />
+                        <VerCursos className={style.Modal} titulo="Poste ou Edite Atividades" isOpenn={openModal} settModalOpen={() => settOpenModal(!openModal)} />
                         </div>
                     </div>
                 </div>
