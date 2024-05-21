@@ -20,6 +20,7 @@ import IrParaAtividade from './Components/js.desing/AlunoVerAtividadeDash/ModalV
 
 import ProfessorActivity from './Components/js.desing/ProfessorDashPostarAtividade'
 import ProfessorClass from './Components/js.desing/ProfessorDashPostarAula';
+import ProfessorCourses from './Components/js.desing/ProfessorPostarCursos/index.js'
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
         {
           path:"/teacher/activity",
        element: <ProfessorActivity NomeCardUm="Cursos Criados" acao="Postar ou Editar Atividades" NomeCardDois="Grafico de Alunos"/>
+        },
+        {
+          path:"/teacher/courses",
+       element: <ProfessorCourses />
         }
        ]
     },

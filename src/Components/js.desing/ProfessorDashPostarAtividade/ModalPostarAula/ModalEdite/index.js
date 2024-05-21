@@ -1,4 +1,5 @@
 import style from './index.module.css'
+import InputQuestao from '../../InputQuestao/index'
 export default function Edite({ isOpenn, settModalOpen }, params) {
     if (isOpenn) {
         return (
@@ -7,15 +8,19 @@ export default function Edite({ isOpenn, settModalOpen }, params) {
                 <h1 className={style.fechar} onClick={settModalOpen}>FECHAR</h1>
                 <h1 className={style.conteinerpostarTitulo}>EDITE ATIVIDADES</h1>
                 <form className={style.fomulario}>
-                    <label className={style.texto}>
-                        Horas de curso(somente inteiras)
-                        ( de 00:00 a 12:00):
-                    </label>
-                    <input className={style.tabelahora} type='time' step={3600000} min={0} max={12} />
-                    <input className={style.tabela} type='text' placeholder={params.input1} />
-                    <input className={style.tabela} type='text' placeholder={params.input2} />
-                    <textarea className={style.descricao} placeholder="descrição" maxLength={500} />
+                <InputQuestao/> 
+                <InputQuestao/> 
+                <InputQuestao/> 
+                <InputQuestao/> 
+                <InputQuestao/> 
+                <InputQuestao/> 
 
+                          <label className={style.label}>Qual curso voce deseja adicionar essa aula?</label>
+                            <select className={style.select} >
+                                <option disabled selected>Escolha</option>
+                                <option>Escolha</option>
+                                <option>Escolha</option>
+                            </select>
                     <button className={style.botaopostar}>EDITAR</button>
                 </form>
             </section>

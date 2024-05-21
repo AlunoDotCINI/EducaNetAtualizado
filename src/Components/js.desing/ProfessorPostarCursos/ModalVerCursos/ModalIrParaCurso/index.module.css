@@ -38,23 +38,38 @@
 .conteinerdes{
     text-align:justify;
 }
-.titulodescricao{
-    color: #fff;
-    font-size: 25px;
+.tabela{
+    background-color: #ffffff;
+    border: none;
+    padding: 8px 11px;
+    margin: 4px 0;
+    width: 95%;
+    height: 30px;
+    border-radius: 14px;
 }
-.txtdescricao{
-    color: #fff;
+.descricao{
+    width: 95%;
+    margin-bottom: 3px;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 5px;
+    height: 90px;
+    display: block;
+    resize: none;
+    border-radius: 10PX;
+}
+.label{
     font-size: 16px;
-    margin-bottom: 20px;
+    font-weight: bold;
 }
-.botaocadastre{
+.botaopostar{
     margin-top: 20px;
     background-color: #0caae9;
     font-size: 16px;
     text-transform: uppercase;
     font-weight: bolder;
-    width: 320px;
-    height: 30px;
+    width: 420px;
+    height: 40px;
     margin :4px;
     border-style: none;
     border-radius: 8px;

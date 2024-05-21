@@ -1,20 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 .modalcorpo{
-    width:430px;
+    width:830px;
     height: 560px;
     background-color: #051342;
     position: absolute;
     border-radius: 20px;
-    z-index:2;
     align-items: center;
     text-align: center;
     padding: 5px;
     top: 100px;
     left: 30px;
 }
+
 .conteinerpostarTitulo{
-    font-size: 25px;
+    font-size: 45px;
     font-family: "VT323", monospace;
 
 }
@@ -25,24 +25,21 @@
 
 }
 .tabela{
-    width: 420px;
-    height: 40px;
+    width: 90%;
+    height: 50px;
     margin: 3px;
     border-radius: 10px;
     border-style: none;
 
 }
-.tabelahora{
-    width: 40px;
-    height: 30px;
-}
+
 .texto{
     font-size: 23px;
     font-family: "VT323", monospace;
 
 }
 .descricao{
-    width: 410px;
+    width: 90%;
     margin-bottom: 3px;
     background-color: #ffffff;
     color: #000000;
@@ -50,6 +47,7 @@
     height: 90px;
     display: block;
     resize: none;
+    border-radius: 10PX;
 }
 
 
@@ -62,6 +60,11 @@
     border-style: none;
     border-radius: 20px;
 }
+.informacao{
+    background-color: #fff;
+    color: #051342;
+    padding: 4px;
+}
 .fechar{
     color: #fff;
     z-index: 40;
@@ -70,4 +73,17 @@
     font-weight: 300;
     margin: 10px;
     padding-right: 600px;
+}
+.select{
+    background-color: #ffffff;
+    border: none;
+    padding: 8px 11px;
+    margin: 4px 0;
+    width: 90%;
+    height: 50px;
+    border-radius: 14px;
+}
+.label{
+    font-size: 20px;
+    font-weight: bold;
 }

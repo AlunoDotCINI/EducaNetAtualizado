@@ -12,22 +12,26 @@ export default function ModalPostClass({ isOpen, setModalOpen }) {
             <section className={style.modalcorpo}>
                 <h1 className={style.fechar} onClick={setModalOpen}>FECHAR</h1>
                 <div className={style.paititulo}>
-                    <h1 className={style.titulo}>Ver Aulas</h1>
+                    <h1 className={style.titulo}>Ver Cursos</h1>
                 </div>
                 <div className={style.estruturacard}>
-                    <div className={style.conteinerverauala}>
-                        <a className={style.tituloconteiner}> Curso em Aberto</a>
+                    <div className={style.conteinerpostarcuso}>
+                        <a className={style.tituloconteiner}>CRIAR UM CURSO</a>
                         <div className={style.verconteiner}>
-                                <a className={style.aualasList}> Curso tal</a>
-                            <button className={style.botaosairdocruso}>Sair do Curso</button>
+                        <input className={style.tabela} type='text' placeholder='NOME DO CURSO' />
+                        <textarea className={style.descricao} placeholder="DESCRIÇÃO" maxLength={500} />
+                        <input className={style.tabela} type='text' placeholder='HORAS DE CURSOS (SOMENTE INTEIROS)' />  
+                        <input className={style.tabela} type='text' placeholder='TEMA CURSO' />                                                      
+                        <button className={style.botaopostar}>POSTAR</button>
                         </div>
                     </div>
-                    <div className={style.conteinerverauala}>
-                        <h1 className={style.tituloconteiner}>PROCURE NOVOS CURSOS</h1>
+                    <div className={style.conteinervercurso}>
+                        <h1 className={style.tituloconteiner}>CURSO EM ABERTO</h1>
                         <div className={style.verconteiner}>
                             <a className={style.aualasList}> CURSO TAL</a>
-                        <button className={style.botaosobre} onClick={() => settOpenModal(true)}>Sobre a Aula</button>
-                        <VerCursos className={style.Modal} titulo="Poste ou Edite Atividades" isOpenn={openModal} settModalOpen={() => settOpenModal(!openModal)} />
+                        <button className={style.botaoEdite} onClick={() => settOpenModal(true)}>EDITE</button>
+                        <button className={style.botaoApagar}>APAGAR</button>
+                        <VerCursos className={style.Modal}  isOpenn={openModal} settModalOpen={() => settOpenModal(!openModal)} />
                         </div>
                         
                     </div>

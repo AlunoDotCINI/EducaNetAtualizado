@@ -54,6 +54,7 @@
     align-items: center;
 }
 
+
 .tituloatvconteiner {
     font-family: "VT323", monospace;
     font-size: 25px;
@@ -92,6 +93,23 @@
     text-align: center;
     border-radius: 12px 44px;
 }
+.conteinerpostaratv{
+    width: 430px;
+    height: 550px;
+    background-color: #080636;
+    z-index: 0;
+    top: 5px;
+    margin: 5px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 4px;
+    align-items: center;
+    text-align: center;
+    border-radius: 12px 44px;
+    overflow-y: scroll;
+    
+}
 .tabela{
     background-color: #ffffff;
     border: none;
@@ -101,15 +119,8 @@
     height: 30px;
     border-radius: 14px;
 }
-.tabelahora{
-    width: 60px;
-    height: 30px;
-}
-.texto{
-    color: #ffffff;
-    font-family: "VT323", monospace;
-    font-size: 25px;
-}
+
+
 .descricao{
   margin:10px;
   background-color: #ffffff;
@@ -143,4 +154,17 @@
     height: 40px;
     border-style: none;
     border-radius: 20px;
+}
+.select{
+    background-color: #ffffff;
+    border: none;
+    padding: 8px 11px;
+    margin: 4px 0;
+    width: 95%;
+    height: 50px;
+    border-radius: 14px;
+}
+.label{
+    font-size: 16px;
+    font-weight: bold;
 }

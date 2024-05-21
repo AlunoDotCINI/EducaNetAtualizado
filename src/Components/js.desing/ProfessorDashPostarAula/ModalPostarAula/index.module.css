@@ -77,11 +77,25 @@
     width: 90px;
     height: 20px;
 }
+.conteinerveraulaspostadas{
+    width: 430px;
+    height: 550px;
+    background-color: #080636;
+    top: 5px;
+    margin: 5px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 4px;
+    align-items: center;
+    text-align: center;
+    border-radius: 12px 44px;
+    overflow-y: scroll; 
+}
 .conteinerpostar {
     width: 430px;
     height: 550px;
     background-color: #080636;
-    z-index: 0;
     top: 5px;
     margin: 5px;
     color: #ffffff;
@@ -101,9 +115,18 @@
     height: 30px;
     border-radius: 14px;
 }
-.tabelahora{
-    width: 60px;
-    height: 30px;
+.select{
+    background-color: #ffffff;
+    border: none;
+    padding: 8px 11px;
+    margin: 4px 0;
+    width: 95%;
+    height: 50px;
+    border-radius: 14px;
+}
+.label{
+    font-size: 16px;
+    font-weight: bold;
 }
 .texto{
     color: #ffffff;
@@ -115,10 +138,11 @@
   background-color: #ffffff;
   color: #000000;
   padding: 5px;
-  width: 400px;
+  width: 90%;
   height: 60px;
   display: block;
   resize: none;
+  border-radius: 5PX;
 }
 .conteinerpostarTitulo{
     color: #ffffff;
@@ -136,7 +160,7 @@
     text-align: center;
 }
 .botaopostar{
-    margin-top: 3px;
+    margin-top: 6px;
     background-color: #03175a;
     color: #ffffff;
     width: 220px;
