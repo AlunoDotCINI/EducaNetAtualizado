@@ -7,7 +7,7 @@ export default function PostClass(){
     const [openModal,setOpenModal] = useState(false) 
     return (
         <section className={style.conteudo}>
-            <h1 className={style.titulo}>{}</h1>
+            <h1 className={style.titulo}>Postar aula</h1>
             <div className={style.conteudocards}>
                 <div className={style.CardUm}>
                     <h1 className={style.nome}>{}</h1>
