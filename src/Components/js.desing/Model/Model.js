@@ -1,20 +1,40 @@
-import React from 'react'
-import { ReactDOM } from 'react-dom';
+import React, { useState } from 'react'
 import * as Components from './index.js'
 
 export default function Modal({ isOpen, setModalOpen}) {
-   const [signIn, toggle] = React.useState(true);
+  const [signIn, toggle] = React.useState(true);
+  //CPF APENAS NUMEROS
+   const [cpf,setCpf] = useState();
+   const handleChange =(e) =>{
+   const value = e.target.value.replace(/\D/g,"")
+   setCpf(value)
+
+   }
+   //############################
+   //Proibir evnio sem itens
+   const [value,setValue]= useState();
+   const checkEmpty =(event) =>{
+    setValue(event.target.value)
+   }
+   //#############################
+    const handleSubmit = (v) =>{
+      v.preventDefault()
+      handleChange()
+      checkEmpty()
+
+    }
+  
+   
    if (isOpen) {
       return (
         <Components.Container>
         <Components.SignUpContainer signingIn={signIn}>
-          <Components.Form>
+          <Components.Form  >
             <Components.Title>CRIE UMA CONTA!</Components.Title>
-            <Components.Input type="text" placeholder="Name" />
-            <Components.Input type="email" placeholder="Email" />
-            <Components.Input type="password" placeholder="Password" />
-            <Components.Input type="text" placeholder="CPF" />
-            <Components.Button>Registre-se</Components.Button>
+            <Components.Input type="email" placeholder="Email"  maxLength={105} value={value}/>
+            <Components.Input type="password" placeholder="Password"  maxLength={25}value={value} />
+            <Components.Input  type="text" placeholder="CPF" minLength={11} maxLength={11}  value={cpf}  onChange= {handleChange}/>
+            <Components.Button disabled={!value} >Registre-se</Components.Button>
             <Components.Divcheck>
             <Components.Check type='checkbox' placeholder="Deseja se cadastrar um Professor" />
             <Components.subtitule>Deseja se cadastrar como professor?</Components.subtitule>
@@ -24,9 +44,9 @@ export default function Modal({ isOpen, setModalOpen}) {
         <Components.SignInContainer signingIn={signIn}>
           <Components.Form>
             <Components.Title>ENTRE AGORA!</Components.Title>
-            <Components.Input type="email" placeholder="Email" />
-            <Components.Input type="password" placeholder="Password" />
-            <Components.Button>Entrar</Components.Button>
+            <Components.Input type="email" placeholder="Email" maxLength={105} value={value}/>
+            <Components.Input type="password" placeholder="Password" maxLength={25} value={value}/>
+            <Components.Button disabled={!value}>Entrar</Components.Button>
           </Components.Form>
         </Components.SignInContainer>
         <Components.OverlayContainer signingIn={signIn}>
