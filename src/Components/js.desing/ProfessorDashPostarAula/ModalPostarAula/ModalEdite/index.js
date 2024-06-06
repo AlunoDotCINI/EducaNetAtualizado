@@ -13,9 +13,9 @@ export default function Edite({ isOpenn, settModalOpen }, params) {
                                 <option>Escolha</option>
                                 <option>Escolha</option>
                             </select>
-                    <input className={style.tabela} type='text' placeholder='NOME DA AULA' />
-                    <input className={style.tabela} type='text' placeholder='ID DA AULA (NO YOUTUBE)' />
-                    <textarea className={style.descricao} placeholder="DESCRIÇÃO" maxLength={500} />
+                    <input className={style.tabela} type='text' placeholder='NOME DA AULA' required/>
+                    <input className={style.tabela} type='text' placeholder='ID DA AULA (NO YOUTUBE)' required />
+                    <textarea className={style.descricao} placeholder="DESCRIÇÃO" maxLength={500}  required/>
 
                     <button className={style.botaopostar}>EDITAR</button>
                 </form>

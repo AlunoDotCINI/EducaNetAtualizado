@@ -24,7 +24,7 @@ export default function ModalPostClass( {isOpen, setModalOpen,params} ) {
 
                         </div>
                     </div>
-                    <div className={style.conteinerpostaratv}>
+                    <form className={style.conteinerpostaratv} >
                         <h1 className={style.conteinerpostarTitulo}>POSTAR ATIVIDADES</h1>
                           <InputQuestao/> 
                           
@@ -34,7 +34,9 @@ export default function ModalPostClass( {isOpen, setModalOpen,params} ) {
                                 <option>Escolha</option>
                                 <option>Escolha</option>
                             </select>
-                    </div>
+                            <button className={style.botaopostar}>postar</button>
+
+                    </form>
                 </div>
             </section>
         );

@@ -24,7 +24,7 @@ export default function ModalPostClass( {isOpen, setModalOpen,} ) {
                         </div>
                         
                     </div>
-                    <div className={style.conteinerpostar}>
+                    <form className={style.conteinerpostar}>
                         <h1 className={style.conteinerpostarTitulo}>POSTAR AULA</h1>
                             <label className={style.label}>Qual curso voce deseja adicionar essa aula?</label>
                             <select className={style.select} >
@@ -32,11 +32,11 @@ export default function ModalPostClass( {isOpen, setModalOpen,} ) {
                                 <option>Escolha</option>
                                 <option>Escolha</option>
                             </select>
-                            <input className={style.tabela} type='text' placeholder='NOME DA AULA' />
-                            <textarea className={style.descricao} placeholder="DESCRIÇÃO" maxLength={500} />
-                            <input className={style.tabela} type='text' placeholder='ID DA AULA   (NO YOUTUBE)' />                            
+                            <input className={style.tabela} type='text' placeholder='NOME DA AULA' required />
+                            <textarea className={style.descricao} placeholder="DESCRIÇÃO" maxLength={500} required/>
+                            <input className={style.tabela} type='text' placeholder='ID DA AULA   (NO YOUTUBE)' required/>                            
                             <button className={style.botaopostar}>POSTAR</button>
-                    </div>
+                    </form>
                 </div>
             </section>
         );

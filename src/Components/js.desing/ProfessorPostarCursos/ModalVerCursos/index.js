@@ -15,16 +15,16 @@ export default function ModalPostClass({ isOpen, setModalOpen }) {
                     <h1 className={style.titulo}>Ver Cursos</h1>
                 </div>
                 <div className={style.estruturacard}>
-                    <div className={style.conteinerpostarcuso}>
+                    <form className={style.conteinerpostarcuso}>
                         <a className={style.tituloconteiner}>CRIAR UM CURSO</a>
                         <div className={style.verconteiner}>
-                        <input className={style.tabela} type='text' placeholder='NOME DO CURSO' />
-                        <textarea className={style.descricao} placeholder="DESCRIÇÃO" maxLength={500} />
-                        <input className={style.tabela} type='text' placeholder='HORAS DE CURSOS (SOMENTE INTEIROS)' />  
-                        <input className={style.tabela} type='text' placeholder='TEMA CURSO' />                                                      
-                        <button className={style.botaopostar}>POSTAR</button>
+                        <input className={style.tabela} type='text' placeholder='NOME DO CURSO' required />
+                        <textarea className={style.descricao} placeholder="DESCRIÇÃO" maxLength={500} required/>
+                        <input className={style.tabela} type='text' placeholder='HORAS DE CURSOS (SOMENTE INTEIROS)' required/>  
+                        <input className={style.tabela} type='text' placeholder='TEMA CURSO'required />                                                      
+                        <button className={style.botaopostar} type='submit'>POSTAR</button>
                         </div>
-                    </div>
+                    </form>
                     <div className={style.conteinervercurso}>
                         <h1 className={style.tituloconteiner}>CURSO EM ABERTO</h1>
                         <div className={style.verconteiner}>

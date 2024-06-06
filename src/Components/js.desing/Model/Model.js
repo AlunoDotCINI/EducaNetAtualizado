@@ -12,17 +12,9 @@ export default function Modal({ isOpen, setModalOpen}) {
    }
    //############################
    //Proibir evnio sem itens
-   const [value,setValue]= useState();
-   const checkEmpty =(event) =>{
-    setValue(event.target.value)
-   }
+  
    //#############################
-    const handleSubmit = (v) =>{
-      v.preventDefault()
-      handleChange()
-      checkEmpty()
-
-    }
+  
   
    
    if (isOpen) {
@@ -31,10 +23,10 @@ export default function Modal({ isOpen, setModalOpen}) {
         <Components.SignUpContainer signingIn={signIn}>
           <Components.Form  >
             <Components.Title>CRIE UMA CONTA!</Components.Title>
-            <Components.Input type="email" placeholder="Email"  maxLength={105} value={value}/>
-            <Components.Input type="password" placeholder="Password"  maxLength={25}value={value} />
-            <Components.Input  type="text" placeholder="CPF" minLength={11} maxLength={11}  value={cpf}  onChange= {handleChange}/>
-            <Components.Button disabled={!value} >Registre-se</Components.Button>
+            <Components.Input type="email" placeholder="Email"  maxLength={105} required />
+            <Components.Input type="password" placeholder="Password"  maxLength={25} required />
+            <Components.Input  type="text" placeholder="CPF" minLength={11} maxLength={11}  value={cpf}  onChange= {handleChange} required/>
+            <Components.Button  >Registre-se</Components.Button>
             <Components.Divcheck>
             <Components.Check type='checkbox' placeholder="Deseja se cadastrar um Professor" />
             <Components.subtitule>Deseja se cadastrar como professor?</Components.subtitule>
@@ -44,9 +36,9 @@ export default function Modal({ isOpen, setModalOpen}) {
         <Components.SignInContainer signingIn={signIn}>
           <Components.Form>
             <Components.Title>ENTRE AGORA!</Components.Title>
-            <Components.Input type="email" placeholder="Email" maxLength={105} value={value}/>
-            <Components.Input type="password" placeholder="Password" maxLength={25} value={value}/>
-            <Components.Button disabled={!value}>Entrar</Components.Button>
+            <Components.Input type="email" placeholder="Email" maxLength={105} required/>
+            <Components.Input type="password" placeholder="Password" maxLength={25} required/>
+            <Components.Button>Entrar</Components.Button>
           </Components.Form>
         </Components.SignInContainer>
         <Components.OverlayContainer signingIn={signIn}>
