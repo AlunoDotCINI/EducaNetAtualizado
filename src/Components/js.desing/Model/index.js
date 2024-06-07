@@ -126,7 +126,7 @@ border-color: #00A3FF;
 font-size:15px;
 `
 
-export const subtitule = styled.h2`
+export const Subtitule = styled.h2`
  font-size: 15px;
 `
 
