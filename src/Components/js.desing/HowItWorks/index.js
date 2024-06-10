@@ -13,11 +13,11 @@ export default function ComoFunciona() {
                 <img className={style.conecte} src={conecte}></img>
                 <h1 className={style.frase1}>APÓS APERTA ESSE <span className={style.span}>BOTÃO</span> VOCE SERÁ REDIRECIONADO PARA UMA PARTE DE LOGIN E REGISTRO</h1>
             </div>
-            <di className={style.coluna2}>
+            <div className={style.coluna2}>
                 <h1 className={style.frase2}>DESSA FORMA, <span className={style.span}> REGISTRE-SE</span> OU<span className={style.span}> ENTRE </span>CASO VOCÊ SEJA UM MEMBRO.</h1>
                 <img className={style.registro} src={registre}></img>
                 <img className={style.login} src={entar}></img>
-            </di>
+            </div>
         </div>
 
     );
