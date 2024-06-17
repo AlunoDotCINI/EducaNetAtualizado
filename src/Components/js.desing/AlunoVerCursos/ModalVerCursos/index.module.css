@@ -47,7 +47,8 @@
     overflow-y: scroll;
     background-color: #030b2b;
     border-radius: 30px 10px;
-
+    flex-direction: column;
+    display: flex;
 
 }
 .tituloconteiner{
@@ -58,6 +59,8 @@
 }
 .verconteiner{
     margin-top: 15px;
+    display: flex;
+    align-items: center;
 }
 
 .aualasList{
@@ -65,10 +68,12 @@
     font-size: 16px;
     text-transform: uppercase;
     font-weight: bolder;
-    padding: 5px 20px;
     background-color: #fff;
     border-radius: 10px;
     text-align: center;
+    margin: 7px;
+    width: 210px;
+    height: 40px;
 }
 .botaosairdocruso{
     background-color: #e90c0c;

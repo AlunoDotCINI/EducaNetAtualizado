@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
@@ -50,7 +50,7 @@ const router = createBrowserRouter([
         },
         {
           path:"/teacher/courses",
-       element: <ProfessorCourses />
+       element: <ProfessorCourses  />
         }
        ]
     },

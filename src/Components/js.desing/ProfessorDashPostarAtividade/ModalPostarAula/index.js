@@ -19,7 +19,7 @@ export default function ModalPostClass( {isOpen, setModalOpen,params} ) {
                         <div className={style.atividadesconteiner}>
                             <a className={style.tituloatvconteiner}> ATIVIDADE</a>
                             <button className={style.botaoeditar} onClick={() => settOpenModal(true)}>Editar</button>
-                            <Editar className={style.Modal} titulo="Poste ou Edite Atividades" isOpenn={openModal} settModalOpen={() => settOpenModal(!openModal)} />
+                            <Editar className={style.Modal}  isOpenn={openModal} settModalOpen={() => settOpenModal(!openModal)} />
                             <button className={style.botaoapagar}>APAGAR</button>
 
                         </div>

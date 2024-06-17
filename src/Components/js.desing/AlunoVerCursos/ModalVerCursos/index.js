@@ -2,21 +2,21 @@ import React, { useEffect } from 'react'
 import style from './index.module.css'
 import VerCursos from './ModalIrParaCurso/index'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 import api from '../../../Service/api'
 export default function ModalPostClass({ isOpen, setModalOpen }) {
     const [openModal, settOpenModal] = useState(false)
-
-       //API CADASTRO
-   const [vdescricao,setDescricao] = useState('');
-   const [vnome,setNome] = useState('');
-   const [vhorascurso,setHorasCurso] = useState('');
-   const [vtemacurso,setTemaCurso] = useState('');
+    let [id,setId] = useState ('')
+    
+    const parentToChild =()=>{
+        return id;
+    }
+    //API CADASTRO   
+    const [post,setPost] = useState([])
 
    useEffect(() =>{
-   api.get('/course/AllCourses',{courseName:setNome,workload:setHorasCurso,description:setDescricao ,courseClass:setTemaCurso},)
+   api.get('/course/AllCourses',)
    .then((response) => {
-    console.log(response.data)
+    setPost(response.data)
    })
    .catch(()=>{
     console.log("error")
@@ -40,11 +40,20 @@ export default function ModalPostClass({ isOpen, setModalOpen }) {
                     </div>
                     <div className={style.conteinerverauala}>
                         <h1 className={style.tituloconteiner}>PROCURE NOVOS CURSOS</h1>
-                        <div className={style.verconteiner}>
-                            <a className={style.aualasList}>{}</a>
-                        <button className={style.botaosobre} onClick={() => settOpenModal(true)}>Sobre a Aula</button>
-                        <VerCursos className={style.Modal} titulo="Poste ou Edite Atividades" isOpenn={openModal} settModalOpen={() => settOpenModal(!openModal)} />
-                        </div>
+                            {post.map((post,key) =>{
+                            setId =post.courseId
+                                            
+                                return(
+                                    <div className={style.verconteiner} key={key}>
+                                    <a className={style.aualasList}>{post.courseName}</a>
+                                    <button className={style.botaosobre} onClick={() =>{
+                                        settOpenModal(true) 
+                                        parentToChild()}}>Sobre a Aula</button>
+                                    <VerCursos isOpenn={openModal}  settModalOpen={() => settOpenModal(!openModal)}/>
+                                    
+                                    </div>
+                                )
+                            })}
                         
                     </div>
                 </div>
