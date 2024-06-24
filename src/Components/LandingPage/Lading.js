@@ -16,7 +16,8 @@ export default function Landing(){
         <BemVindo/>
         <Mensagem 
          Titulo="1. Flexibilidade de horários"
-         Subtitulo="Os estudantes podem assistir às aulas e realizar as atividades de acordo com sua disponibilidade" />
+         Subtitulo="Os estudantes podem assistir às aulas e realizar as atividades de acordo com sua disponibilidade"
+          />
         <ComoFunciona/>
         <Divirta/> 
         <Mensagem

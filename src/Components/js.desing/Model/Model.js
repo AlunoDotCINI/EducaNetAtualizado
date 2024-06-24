@@ -1,16 +1,19 @@
 import React, { useState } from 'react'
 import * as Components from './index.js'
 import api from '../../Service/api.js';
-export default function Modal({ isOpen, setModalOpen}) {
-  const [signIn, toggle] = React.useState(true);
+export default function Modal({ isOpen, setModalOpen},props) {
   
-   //API VERIFICAÇAÕ DE EMAIL E SENHA
+  const [signIn, toggle] = React.useState(true);
+  //API VERIFICAÇAÕ DE EMAIL E SENHA
    const [valiemail,setValiEmail]= useState('')
    const [valipassoword,setValiPassword]= useState('')
+
+
    const handleCheck = async()=>{
     try{
       const response = await api.post('/validateUser',{email:valiemail,password:valipassoword})
       console.log(response.data)
+      props.handleResult(response.data)
     }
     catch(error){
       console.log(error)
@@ -21,11 +24,14 @@ export default function Modal({ isOpen, setModalOpen}) {
    const [vemail,setEmail] = useState('');
    const [vpassword,setPassword] = useState('');
    const [vcpf,setCpf] = useState('');
-   
+   const [vnome,setNome] = useState('');
+   const [vsobrenome,setSobrenome] = useState('');
+
    const handleSubmit = async () =>{
     try{
-   const response = await api.post('/users',{email:vemail,password:vpassword,userCpf:vcpf ,userVerification:resultado})
+   const response = await api.post('/users',{email:vemail,password:vpassword,userCpf:vcpf ,userVerification:resultado,userName:vnome,userLastName:vsobrenome})
    console.log(response.data)
+   
   }
   catch(error){
     console.log(error)
@@ -55,6 +61,17 @@ export default function Modal({ isOpen, setModalOpen}) {
         <Components.SignUpContainer signingIn={signIn}>
           <Components.Form  >
             <Components.Title>CRIE UMA CONTA!</Components.Title>
+            
+            <Components.Input  type="text" placeholder="NOME" 
+            minLength={1} maxLength={31} required
+            onKeyDown={checkboxNumber}
+            onChange={(e)=> setNome(e.target.value)}/>
+
+            <Components.Input  type="text" placeholder="SOBRENOME" 
+            minLength={1} maxLength={100} required
+            onKeyDown={checkboxNumber}
+            onChange={(e)=> setSobrenome(e.target.value)}/>
+            
             <Components.Input type="email" placeholder="Email"  
             maxLength={105} required
             onChange= {(e)=> setEmail(e.target.value)} 
@@ -70,7 +87,7 @@ export default function Modal({ isOpen, setModalOpen}) {
             onKeyDown={checkboxNumber}
             onChange={(e)=> setCpf(e.target.value)}/>
 
-            <Components.Button  onClick={handleSubmit} >Registre-se</Components.Button>
+            <Components.Button type='submit'  onClick={handleSubmit} >Registre-se</Components.Button>
             <Components.Divcheck>
 
             <Components.Check type='checkbox' placeholder="Deseja se cadastrar um Professor"
@@ -83,12 +100,14 @@ export default function Modal({ isOpen, setModalOpen}) {
         <Components.SignInContainer signingIn={signIn}>
           <Components.Form>
             <Components.Title>ENTRE AGORA!</Components.Title>
-            <Components.Input type="email" placeholder="Email" maxLength={105} 
-            onChange={(e) => setValiEmail(e.target.checked)}
-            onKeyDown={validateEmail}/>
-            <Components.Input type="password" placeholder="Password" maxLength={25} required
-             onChange={(e) => setValiPassword(e.target.checked)}/>
-            <Components.Button onClick={handleCheck}>Entrar</Components.Button>
+            <Components.Input type="email" placeholder="Email"
+             maxLength={105} 
+            onChange={(e) => setValiEmail(e.target.value)}
+            />
+            <Components.Input type="password" placeholder="Password" 
+            maxLength={25} required
+            onChange={(e) => setValiPassword(e.target.value)}/>
+            <Components.Button type='submit' onClick={handleCheck}>Entrar</Components.Button>
           </Components.Form>
         </Components.SignInContainer>
         <Components.OverlayContainer signingIn={signIn}>

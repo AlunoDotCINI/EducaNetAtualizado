@@ -8,6 +8,7 @@ export default function ModalPostClass({ isOpen, setModalOpen }) {
     let [id,setId] = useState ('')
     
     const parentToChild =()=>{
+        setId =post.courseId
         return id;
     }
     //API CADASTRO   
@@ -41,7 +42,6 @@ export default function ModalPostClass({ isOpen, setModalOpen }) {
                     <div className={style.conteinerverauala}>
                         <h1 className={style.tituloconteiner}>PROCURE NOVOS CURSOS</h1>
                             {post.map((post,key) =>{
-                            setId =post.courseId
                                             
                                 return(
                                     <div className={style.verconteiner} key={key}>
