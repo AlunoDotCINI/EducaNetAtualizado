@@ -1,19 +1,34 @@
 import React, { useState } from 'react'
 import * as Components from './index.js'
 import api from '../../Service/api.js';
+import { useNavigate } from "react-router-dom";
 export default function Modal({ isOpen, setModalOpen},props) {
   
   const [signIn, toggle] = React.useState(true);
   //API VERIFICAÇAÕ DE EMAIL E SENHA
    const [valiemail,setValiEmail]= useState('')
    const [valipassoword,setValiPassword]= useState('')
+   const navigate = useNavigate();
 
 
    const handleCheck = async()=>{
     try{
       const response = await api.post('/validateUser',{email:valiemail,password:valipassoword})
       console.log(response.data)
-      props.handleResult(response.data)
+      console.log(response.data.userVerification)
+
+      let userCode = response.data.userVerification;
+
+      sessionStorage.setItem("userId", response.data.userId);
+
+      if (userCode !== "A" && userCode !== "P") {
+        navigate("/error")
+      }
+      if (userCode === "A") {
+        navigate("/students");
+      }
+      if (userCode === "P")
+        navigate("/teacher");
     }
     catch(error){
       console.log(error)
@@ -107,7 +122,7 @@ export default function Modal({ isOpen, setModalOpen},props) {
             <Components.Input type="password" placeholder="Password" 
             maxLength={25} required
             onChange={(e) => setValiPassword(e.target.value)}/>
-            <Components.Button type='submit' onClick={handleCheck}>Entrar</Components.Button>
+            <Components.Button type='button' onClick={handleCheck}>Entrar</Components.Button>
           </Components.Form>
         </Components.SignInContainer>
         <Components.OverlayContainer signingIn={signIn}>

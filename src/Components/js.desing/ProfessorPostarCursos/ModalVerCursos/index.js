@@ -15,6 +15,7 @@ export default function ModalPostClass({ isOpen, setModalOpen }) {
     try{
     const response = await api.post('/course/coursesave',{courseName:vnome,workload:vhorascurso,description:vdescricao ,courseClass:vtemacurso})
     console.log(response.data)
+    console.log("Curso Cadastrado!!")
      }
     catch(error){
    console.log(error)
@@ -74,7 +75,7 @@ export default function ModalPostClass({ isOpen, setModalOpen }) {
                         onChange= {(e)=> setTemaCurso(e.target.value)} 
                         onKeyDown={ (e) =>checkboxSpecialChar(e)}/>        
 
-                        <button className={style.botaopostar} type='submit' onClick={handleSubmit} >POSTAR</button>
+                        <button className={style.botaopostar} type='button' onClick={handleSubmit} >POSTAR</button>
                         </div>
                     </form>
                     <div className={style.conteinervercurso}>

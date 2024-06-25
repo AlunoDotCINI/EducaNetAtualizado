@@ -8,9 +8,8 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import List from './Components/js.desing/ListOpitions/index'
 import Landing from './Components/LandingPage/Lading';
 import Home from './Components/js.desing/HomeDash/index';
-import PrivateRoute from './Routes/PrivateRoute.js'
 import ErrorPage from './Components/Error/ErrorPage.js';
-
+import ListStudents from './Components/js.desing/ListOpitionsStudent/index.js'
 
 import AlunosClass from './Components/js.desing/AlunoDashVerAula'
 import ActivityAluno from './Components/js.desing/AlunoVerAtividadeDash/index.js' 
@@ -24,7 +23,6 @@ import ProfessorCourses from './Components/js.desing/ProfessorPostarCursos/index
 
 const router = createBrowserRouter([
   {
-   path:"/",
    element:<App/>,
    errorElement:<ErrorPage/>,
    children:[
@@ -34,7 +32,7 @@ const router = createBrowserRouter([
     },
     {
       path:"/teacher",
-       element:<PrivateRoute><List/></PrivateRoute>,
+       element:<List/>,
        children:[
         {
           path:"/teacher",
@@ -56,7 +54,7 @@ const router = createBrowserRouter([
     },
     {
       path:"/students",
-      element:<PrivateRoute><List/></PrivateRoute>,
+      element:<ListStudents/>,
       children:[
         {
           path:"/students",

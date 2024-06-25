@@ -31,6 +31,9 @@ export default function Edite({ isOpenn, settModalOpen }, params) {
    const [vtemacurso,setTemaCurso] = useState('');
 
    const handleSubmit = async () =>{
+
+    let userId = sessionStorage.getItem("userId");
+
    try{
    const response = await api.put('/course/1',{courseName:vnome,workload:vhorascurso,description:vdescricao ,courseClass:vtemacurso})
    console.log(response.data)

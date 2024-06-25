@@ -1,23 +1,21 @@
-import style from './index.module.css'
-import api from '../../../../Service/api'
-import { useEffect } from 'react'
-import { useState } from 'react'
-export default function SobreCurso({ isOpenn, settModalOpen,parentToChild }) {
-    //API
-    const [post, setPost] = useState([])
+import React, { useEffect, useState } from 'react';
+import style from './index.module.css';
+import api from '../../../../Service/api';
+
+export default function SobreCurso({ isOpenn, settModalOpen, courseId }) {
+    const [post, setPost] = useState([]);
     useEffect(() => {
-        api.get('/course/'+parentToChild)
+        api.get(`/course/${courseId}`)
             .then((response) => {
-                setPost([response.data])
+                setPost([response.data]);
             })
             .catch(() => {
-                console.log("error")
-            })
-    }, [])
+                console.log('Erro ao buscar informações do curso');
+            });
+    }, [courseId]);
 
     if (isOpenn) {
         return (
-
             <section className={style.modalcorpo}>
                 <h1 className={style.fechar} onClick={settModalOpen}>FECHAR</h1>
                 <div className={style.conteiner}>
@@ -34,10 +32,9 @@ export default function SobreCurso({ isOpenn, settModalOpen,parentToChild }) {
                             </div>
                         )
                     })}
-
                 </div>
             </section>
         );
     }
-    return null
+    return null;
 }
