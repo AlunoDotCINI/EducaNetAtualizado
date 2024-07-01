@@ -30,6 +30,10 @@
     overflow-y: scroll;
     border-radius: 10px 10px 10px 10px
 }
+.verconteiner{
+    display: flex;
+    flex-direction: column;
+}
 .CardUm::-webkit-scrollbar{
     -webkit-animation-delay: 2s;
     background-color: #ffffff;

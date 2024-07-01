@@ -18,7 +18,6 @@ export default function Modal({ isOpen, setModalOpen},props) {
       console.log(response.data.userVerification)
 
       let userCode = response.data.userVerification;
-
       sessionStorage.setItem("userId", response.data.userId);
 
       if (userCode !== "A" && userCode !== "P") {
@@ -79,18 +78,15 @@ export default function Modal({ isOpen, setModalOpen},props) {
             
             <Components.Input  type="text" placeholder="NOME" 
             minLength={1} maxLength={31} required
-            onKeyDown={checkboxNumber}
             onChange={(e)=> setNome(e.target.value)}/>
 
             <Components.Input  type="text" placeholder="SOBRENOME" 
             minLength={1} maxLength={100} required
-            onKeyDown={checkboxNumber}
             onChange={(e)=> setSobrenome(e.target.value)}/>
             
             <Components.Input type="email" placeholder="Email"  
             maxLength={105} required
-            onChange= {(e)=> setEmail(e.target.value)} 
-            onKeyDown={validateEmail}/>
+            onChange= {(e)=> setEmail(e.target.value)}/>
 
             <Components.Input type="password" placeholder="Password"  
             maxLength={25} required 
@@ -102,7 +98,7 @@ export default function Modal({ isOpen, setModalOpen},props) {
             onKeyDown={checkboxNumber}
             onChange={(e)=> setCpf(e.target.value)}/>
 
-            <Components.Button type='submit'  onClick={handleSubmit} >Registre-se</Components.Button>
+            <Components.Button type='button'  onClick={handleSubmit} >Registre-se</Components.Button>
             <Components.Divcheck>
 
             <Components.Check type='checkbox' placeholder="Deseja se cadastrar um Professor"

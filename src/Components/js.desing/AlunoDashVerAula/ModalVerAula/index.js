@@ -17,7 +17,7 @@ export default function ModalPostClass({ isOpen, setModalOpen }) {
                     <div className={style.conteinerverauala}>
                         <a className={style.tituloconteiner}>Video-Aulas em Aberto</a>
                         <div className={style.veraulaconteiner}>
-                             <a className={style.aualasList}> Aula</a>
+                             <a className={style.aualasList}>prof Noslen</a>
                             <Link to ='/students/watch'><button className={style.botaoveraula}>Ver Aula</button></Link>
                         </div>
                         

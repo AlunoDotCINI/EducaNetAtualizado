@@ -5,7 +5,7 @@ import api from '../../../../Service/api';
 export default function SobreCurso({ isOpenn, settModalOpen, courseId }) {
     const [post, setPost] = useState([]);
     useEffect(() => {
-        api.get(`/course/${courseId}`)
+        api.get()
             .then((response) => {
                 setPost([response.data]);
             })

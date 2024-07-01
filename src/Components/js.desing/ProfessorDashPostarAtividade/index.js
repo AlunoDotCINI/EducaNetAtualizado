@@ -1,6 +1,4 @@
-import Chart from "../ChartPostarAtividade/Chart"
 import style from "./index.module.css"
-import ModalPostClass from "./ModalPostarAula/index"
 import { useState } from 'react';
 
 export default function PostActivity(params) {
@@ -16,12 +14,10 @@ export default function PostActivity(params) {
                 </div>
                 <div className={style.CardDois}>
                     <button className={style.acao} onClick={() => setOpenModal(true)}>POSTE UM ATIVIDADE AQUI</button>
-                    <ModalPostClass className={style.modal} txt="nao da certo" titulo="nao da certo" isOpen={openModal} setModalOpen={() => setOpenModal(!openModal)} />
                 </div>
             </div>
             <div className={style.CardTres}>
                 <h1 className={style.NomeCardDois}></h1>
-                <Chart className={style.grafico} />
             </div>
         </section>
     );
