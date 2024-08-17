@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+.conteudo{
+padding: 30px;
+}
+.tituloatv{
+    color: #fff;
+    font-size: 60px;
+    font-family: "VT323", monospace;
+    margin-bottom: 30px;
+}
+.enunciado{
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 10px;
+    width: 980px;
+
+}
+.formatoquestao{
+    margin: 20px 0px ;
+    width: 890px;
+    height: 60px;
+    background-color: #fff;
+    border-radius:  10px;
+    align-items:center;
+    display:flex;
+    justify-content: space-between;
+    padding: 2px;
+}
+.alternativa{
+    font-size: 14px;
+    font-weight: 700;
+    margin:10px;
+    text-align: justify;
+}
+.selecionando{
+    margin: 3px;
+}
+.enviar{
+    background-color: #02195a;
+    color: #ffffff;
+    width: 420px;
+    height: 40px;
+    border-style: none;
+    border-radius: 10px;
+}

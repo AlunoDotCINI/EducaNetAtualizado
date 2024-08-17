@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+.conteudo{
+    display: flex;
+    flex-direction: column;
+}
+.titulovideo{
+    color: #ffffff;
+    font-family: "VT323", monospace;
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+.titulodescricaovideo{
+    color: #ffffff;
+    font-family: "VT323", monospace;
+    font-size: 40px;
+}
+.descricaovideo{
+    color: #ffffff;
+    font-size: 13px;
+}

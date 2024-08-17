@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+.conteudo {
+    padding: 40px;
+}
+
+.coteudocard {
+    padding: 20px;
+    background-color: #00A3FF;
+    width: 980px;
+    height: 780px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo{
+    color: white;
+    font-family: "VT323", monospace;
+    font-size: 50px;
+    margin: 3px;
+}
+
+.entrada {
+    background-color: #eee;
+    border: none;
+    padding: 8px 11px;
+    margin: 5px 0;
+    width: 80%;
+    min-height: 40px;
+    border-radius: 20px;
+}
+
+.selecione{
+    background-color: #eee;
+    border: none;
+    padding: 8px 11px;
+    margin: 5px 0;
+    width: 82%;
+    min-height: 40px;
+    border-radius: 20px;
+}
+
+.area {
+    margin: 2px;
+    width: 80%;
+    height: 230px;
+    border-radius: 20px;
+    background-color: #eee;
+    text-align: justify;
+    align-items:flex-start;
+    padding: 10px;
+    border-style: none;
+    resize: none;
+}
+
+.botao{
+    width: 340px;
+    height: 60px;
+    background-color: #021B4E;
+    border-style: none;
+    border-radius: 20px;
+    color: #ffffff;
+}

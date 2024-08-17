@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+.conteudo{
+ padding: 30px;
+}
+.titulo{
+    color: #ffffff;
+    font-size: 80px;
+    font-family: "VT323", monospace;
+    margin-bottom: 4px;
+}
+.temacurso{
+    color: #ffffff;
+    font-size: 40px;
+    font-family: "VT323", monospace;
+    margin-bottom: 4px;
+}
+.descricao{
+    color: #ffffff;
+    font-size: 40px;
+    font-family: "VT323", monospace;
+}
+.enunciado{
+    color: #ffffff;
+    width: 880px;
+    text-align: justify;
+    font-size: 16px;
+}
+.entre{
+    margin: 20px 10px;
+    width: 490px;
+    height: 60px;
+    background-color: #021B4E;
+    color: #ffffff;
+    border-style: none;
+    border-radius: 10px;
+    font-weight: bold;
+}
