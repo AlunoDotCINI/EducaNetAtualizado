@@ -29,14 +29,14 @@ export default function DashClass(params){
                         })}
                 </div>
                 <div className={style.CardDois}>
-                <Link to="/teacher/courses/PostCourse" className={style.link}><button className={style.poste_curso}> POSTE UM CURSO</button></Link>
+                <Link to="/teacher/courses/post" className={style.link}><button className={style.poste_curso}> POSTE UM CURSO</button></Link>
                 </div>
             </div>
             <div className={style.CardTres}>
                 <h1 className={style.nome_cardTres}>EDITE SEUS CURSOS</h1>
                 <div className={style.cursoeditar}>
                     <a className={style.titulocurso}>CURSO A</a>
-                    <Link to="/teacher/courses/EditCourse" className={style.link}> <button className={style.botaoeditar}> Editar</button></Link>
+                    <Link to="/teacher/courses/edit" className={style.link}> <button className={style.botaoeditar}> Editar</button></Link>
                     <button className={style.botaoapagar} >Apagar</button>
                 </div>
             </div>

@@ -9,81 +9,124 @@ import List from './Components/js.desing/ListOpitions/index'
 import Landing from './Components/LandingPage/Lading';
 import Home from './Components/js.desing/HomeDash/index';
 import ErrorPage from './Components/Error/ErrorPage.js';
-import ListStudents from './Components/js.desing/ListOpitionsStudent/index.js'
+import ListaEstudante from './Components/js.desing/ListOpitionsStudent/index.js'
+//Rotas Aluno
+import AlunosAula from './Components/js.desing/StudentDashClass/index.js'
+import AtividadeAluno from './Components/js.desing/StudentDashActivity/index.js'
+import AssistirAula from './Components/js.desing/StudentDashClass/AssistClassView/index';
+import VerCursos from './Components/js.desing/StudentDashCourses/index.js'
+import IrParaAtividade from './Components/js.desing/StudentDashActivity/LayoutAtividade/index.js'
+import IrParaMeuCurso from './Components/js.desing/StudentDashCourses/SobreMeusCurso/index.js'
+import IrParaaSobreCurso from './Components/js.desing/StudentDashCourses/SobreCurso/index.js'
 
-import AlunosClass from './Components/js.desing/AlunoDashVerAula'
-import ActivityAluno from './Components/js.desing/AlunoVerAtividadeDash/index.js' 
-import AssistirAula from './Components/js.desing/AlunoDashVerAula/ModalVerAula/AsistirCurso/index.js';
-import VerCursos from './Components/js.desing/AlunoVerCursos/index.js'
-import IrParaAtividade from './Components/js.desing/AlunoVerAtividadeDash/ModalVerAtividade/ModaIrParaAtv/index.js'
-
-import ProfessorActivity from './Components/js.desing/ProfessorDashPostarAtividade'
-import ProfessorClass from './Components/js.desing/ProfessorDashPostarAula';
-import ProfessorCourses from './Components/js.desing/ProfessorPostarCursos/index.js'
-
+//ROTAS PROFESSOR
+//professor editar atividades
+import ProfessorAtividade from './Components/js.desing/TeacherDashActivity/index.js'
+import ProfessorAtividadePostar from './Components/js.desing/TeacherDashActivity/ProfessorPostarAtividade/index.js'
+import ProfessorAtividadeEditar from './Components/js.desing/TeacherDashActivity/ProfessorEditarAtividade/index.js'
+//professor video aula postar e editar
+import ProfessorClasse from './Components/js.desing/TeacherDashClass/index.js'
+import ProfessorClassePostarVideo from './Components/js.desing/TeacherDashClass/ProfessorPostarAula/index.js'
+//professor postar curso e editar
+import ProfessorCurso from './Components/js.desing/TeacherDashCourses/index.js'
+import ProfessorPostarCurso from './Components/js.desing/TeacherDashCourses/ProfessorPostarCurso/index.js'
+import ProfessorEditarCurso from './Components/js.desing/TeacherDashCourses/ProfessorEditarCurso/index.js'
 const router = createBrowserRouter([
   {
-   element:<App/>,
-   errorElement:<ErrorPage/>,
-   children:[
-    {
-      path:"/",
-      element: <Landing/>
-    },
-    {
-      path:"/teacher",
-       element:<List/>,
-       children:[
-        {
-          path:"/teacher",
-       element: <Home/>
-        },
-        {
-          path:"/teacher/class",
-       element: <ProfessorClass NomeCardUm="Cursos Criados" acao="Postar ou Editar Atividades" NomeCardDois="Grafico de Alunos"/>
-        },
-        {
-          path:"/teacher/activity",
-       element: <ProfessorActivity NomeCardUm="Cursos Criados" acao="Postar ou Editar Atividades" NomeCardDois="Grafico de Alunos"/>
-        },
-        {
-          path:"/teacher/courses",
-       element: <ProfessorCourses  />
-        }
-       ]
-    },
-    {
-      path:"/students",
-      element:<ListStudents/>,
-      children:[
-        {
-          path:"/students",
-       element: <Home/>
-        },
-        {
-          path:"/students/courses",
-          element:<VerCursos/>
-        },
-        {
-          path:"/students/class",
-       element: <AlunosClass NomeCardUm="Cursos Criados" acao="Postar ou Editar Atividades" NomeCardDois="Grafico de Alunos"/>,
-        },   
-        {
-            path:"/students/watch",
-            element:<AssistirAula/>
-        },
-        {
-          path:"/students/activity",
-          element:<ActivityAluno/>
-        },
-        {
-          path:"/students/goactivity",
-          element:<IrParaAtividade/>
-        }
-      ]
-   
-    }
-   ]
+    element: <App />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/",
+        element: <Landing />
+      },
+      {
+        path: "/teacher",
+        element: <List />,
+        children: [
+          {
+            path: "/teacher",
+            element: <Home />
+          },
+          {
+            path: "/teacher/class",
+            element: <ProfessorClasse />
+          },
+          { 
+            path: "/teacher/class/post",
+            element:<ProfessorClassePostarVideo />
+          },
+          {
+            path: "/teacher/class/edit",
+            element:<ProfessorEditarCurso/>
+          },
+
+          {
+            path: "/teacher/activity",
+            element: <ProfessorAtividade />
+          },
+          {
+            path: "/teacher/activity/post",
+            element: <ProfessorAtividadePostar/>
+          },
+          {
+            path: "/teacher/activity/edit",
+            element: <ProfessorAtividadeEditar />
+          },
+          {
+            path: "/teacher/courses",
+            element: <ProfessorCurso />,
+          },
+          {
+            path: "/teacher/courses/post",
+            element:<ProfessorPostarCurso/>
+          },   
+          {
+            path: "/teacher/courses/edit",
+            element:<ProfessorEditarCurso/>
+          }
+        ]
+      },
+      {
+        path: "/students",
+        element: <ListaEstudante />,
+        children: [
+          {
+            path: "/students",
+            element: <Home />
+          },
+          {
+            path: "/students/courses",
+            element: <VerCursos />
+          },
+          {
+            path: "/students/courses/seemycourse",
+            element: <IrParaMeuCurso />
+          },
+          {
+            path: "/students/courses/seecourse",
+            element: <IrParaaSobreCurso />
+          },
+          {
+            path: "/students/class",
+            element: <AlunosAula />,
+          },
+          {
+            path: "/students/watch",
+            element: <AssistirAula />
+          },
+          {
+            path: "/students/activity",
+            element: <AtividadeAluno />
+          },
+          {
+            path: "/students/goactivity",
+            element: <IrParaAtividade />
+          }
+        ]
+
+      }
+    ]
   }
 ])
 
