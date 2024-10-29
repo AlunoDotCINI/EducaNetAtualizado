@@ -76,11 +76,11 @@ export default function Modal({ isOpen, setModalOpen},props) {
           <Components.Form  >
             <Components.Title>CRIE UMA CONTA!</Components.Title>
             
-            <Components.Input  type="text" placeholder="NOME" 
+            <Components.Input  type="text" placeholder="Nome" 
             minLength={1} maxLength={31} required
             onChange={(e)=> setNome(e.target.value)}/>
 
-            <Components.Input  type="text" placeholder="SOBRENOME" 
+            <Components.Input  type="text" placeholder="Sobrenome" 
             minLength={1} maxLength={100} required
             onChange={(e)=> setSobrenome(e.target.value)}/>
             
@@ -95,7 +95,7 @@ export default function Modal({ isOpen, setModalOpen},props) {
 
             <Components.Input  type="text" placeholder="CPF" 
             minLength={11} maxLength={11} required
-            onKeyDown={checkboxNumber}
+    
             onChange={(e)=> setCpf(e.target.value)}/>
 
             <Components.Button type='button'  onClick={handleSubmit} >Registre-se</Components.Button>

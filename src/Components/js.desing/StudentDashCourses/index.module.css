@@ -29,8 +29,10 @@
 
 .verconteiner {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 40px;
 }
+
 
 .CardUm::-webkit-scrollbar {
     -webkit-animation-delay: 2s;
@@ -79,7 +81,7 @@
     background-color: #00A3FF;
     border-radius: 15px;
     align-items: center;
-    width: 770px;
+    width: 500px;
     height: 780px;
     margin: 0 auto;
     padding-left: 20px;
@@ -92,26 +94,31 @@
     padding-bottom: 50px;
     padding-left: 5px;
     text-transform: uppercase;
+    padding: 40px;
 }
 
 .vercurso {
     display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .titulocurso {
     color: #fff;
     font-size: 35px;
     font-family: "VT323", monospace;
-    margin: 2px;
+    padding: 3px;
 }
 
 .botaovercurso {
+    position: absolute;
     color: #fff;
     background-color: #021B4E;
+    height: 20px;
     width: 180px;
     border-style: none;
-    border-radius: 5px;
-    margin: 2px;
+    border-radius: 15px;
+    margin-top: 40px;
 }
 .link{
     text-decoration-style: none;

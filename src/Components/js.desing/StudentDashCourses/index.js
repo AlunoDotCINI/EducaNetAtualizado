@@ -5,8 +5,6 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export default function VerClass() {
-    const [openModal, setOpenModal] = useState(false)
-
     // API para buscar todos os cursos
     const [post, setPost] = useState([]);
     useEffect(() => {
@@ -39,10 +37,17 @@ export default function VerClass() {
                     </div>
                 </div>
                 <div className={style.CardDois}>
-                    <h1 className={style.nome_cardDois}>PROCURE CURSPS</h1>
+                    <h1 className={style.nome_cardDois}>PROCURE CURSOS</h1>
                     <div className={style.vercurso}>
-                        <a className={style.titulocurso}>CURSO NOME</a>
-                        <button className={style.botaovercurso}> <Link to="/students/courses/seecourse" className={style.link}>Ver Curso</Link></button>
+                    {post.map((course, key4) => {
+                            return (
+                                <div className={style.verconteiner} key={key4}>
+                                    <a className={style.titulocurso}>{course.courseName}</a>
+                                    <button className={style.botaovercurso}> <Link to="/students/courses/seecourse" className={style.link}>Ver Curso</Link></button>
+                                </div>
+                            );
+                        })}
+                        
                     </div>
                 </div>
         </section>
