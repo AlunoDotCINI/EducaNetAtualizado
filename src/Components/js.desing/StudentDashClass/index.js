@@ -19,7 +19,7 @@ export default function VerClass(params) {
         <section className={style.conteudo}>
             <div className={style.conteudocards}>
                 <div className={style.CardUm}>
-                    <h1 className={style.nome_cardUm}>Video Aulas</h1>
+                    <h1 className={style.nome_cardUm}>Vídeo Aulas</h1>
                     <a className={style.itens}></a>
                     {post.map((course, key) => {
                         return (
@@ -29,9 +29,9 @@ export default function VerClass(params) {
                 </div>
             </div>
             <div className={style.CardDois}>
-                <h1 className={style.nome_cardDois}>Video Aulas para você ver</h1>
+                <h1 className={style.nome_cardDois}>Vídeo Aulas para você ver</h1>
                 <div className={style.veraula}>
-                    <a className={style.tituloaula}>VIDEO AULA NOME</a>
+                    <a className={style.tituloaula}>VÍDEO AULA NOME</a>
                     <button className={style.botaoveraula}> <Link className={style.link} to="/students/watch">Ver Aula</Link></button>
                 </div>
             </div>

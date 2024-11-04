@@ -3,7 +3,7 @@ export default function ViewClass(){
  
     return(
         <section className={style.conteudo}>
-            <h1 className={style.titulovideo}>TITULO AULA</h1>
+            <h1 className={style.titulovideo}>TÍTULO AULA</h1>
             <h2 className={style.titulodescricaovideo} >DESCRIÇÃO</h2>
             <div>
                 <a className={style.descricaovideo}>loren</a>

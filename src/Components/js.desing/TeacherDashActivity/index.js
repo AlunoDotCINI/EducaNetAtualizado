@@ -10,13 +10,13 @@ export default function DashActivity() {
                     <a className={style.itens}></a>
                 </div>
                 <div className={style.CardDois}>
-                    <Link to="/teacher/activity/post"><button className={style.poste_atividades}>POSTE UM ATIVIDADE AQUI</button></Link>
+                    <Link to="/teacher/activity/post"><button className={style.poste_atividades}>POSTE UMA ATIVIDADE AQUI</button></Link>
                 </div>
             </div>
             <div className={style.CardTres}>
                 <h1 className={style.nome_cardTres}>EDITAR SUAS ATIVIDADES</h1>
                 <div className={style.atividadeeditar}>
-                    <a className={style.tituloatividade}>VIDEO AULA NOME</a>
+                    <a className={style.tituloatividade}>VÍDEO AULA NOME:</a>
                     <Link to="/teacher/activity/edit"><button className={style.botaoeditar}>Editar</button></Link>
                     <button className={style.botaoapagar} >Apagar</button>
                 </div>

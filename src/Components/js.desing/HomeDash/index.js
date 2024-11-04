@@ -16,17 +16,17 @@ export default function HomeStudents() {
                     <Card
                         foto={Imagem}
                         titulo="Está participando de algum curso?"
-                        subtitulo="Senão,explore e se aventure em um dos nossos cursos"
+                        subtitulo="Senão, explore e se aventure em um dos nossos cursos"
                         botao="Veja agora!!!" />
                     <Card foto={Cursos}
                         titulo="Está participando de algum curso?"
-                        subtitulo="Senão,explore e se aventure em um dos nossos cursos"
+                        subtitulo="Senão, explore e se aventure em um dos nossos cursos"
                         botao="Veja agora!!!" />
                 </div>
                 <div className={style.partedois}>
                     <CardDois foto={Classe}
                         titulo="Está participando de algum curso?"
-                        subtitulo="Senão,explore e se aventure em um dos nossos cursos"
+                        subtitulo="Senão, explore e se aventure em um dos nossos cursos"
                         botao="Veja agora!!!" />
                 </div>
             </div>
