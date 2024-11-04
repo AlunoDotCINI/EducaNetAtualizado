@@ -7,7 +7,7 @@ export default function Historia() {
         <div className={style.corpo} id="History">
             <div className={style.coluna1}>
                 <h1 className={style.Titulo}> NOSSA HISTÓRIA !!</h1>
-                <h2 className={style.Subtitulo}>SOBRE DE NÓS</h2>
+                <h2 className={style.Subtitulo}>SOBRE NÓS</h2>
                 <h3 className={style.Subtitulo2}>ONDE TUDO COMEÇOU... "ITB BRASÍLIO FLORES DE AZEVEDO"</h3>
                 <img src={itb} className={style.itb}></img>
                 <h3 className={style.texto}>
