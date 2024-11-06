@@ -5,8 +5,8 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export default function DashClass(params){
-//coursos por id
-    const [postu, setPostu] = useState([]);
+//Todos Cursos
+    const [post, setPostu] = useState([]);
 
     useEffect(() => {
         api.get("/course/AllCourses")
@@ -17,12 +17,25 @@ export default function DashClass(params){
                 console.log('Erro ao buscar os cursos');
             });
     }, []);
+
+    const [postById, setPost] = useState([]);
+
+    useEffect(() => {
+        api.get("/course/courseId")
+        .then((response) => {
+            setPost(response.data);
+        })
+        .catch(() => {
+            console.log('erro ao editar esse curso');
+        });
+    });
+
     return (
         <section className={style.conteudo}>
             <div className={style.conteudocards}>
                 <div className={style.CardUm}>
                     <h1 className={style.nome}>CURSOS CADASTRADOS</h1>
-                    {postu.map((course, key) => {
+                    {post.map((course, key) => {
                             return (
                         <a className={style.itens}>{course.courseName}</a>
                             );
@@ -34,11 +47,19 @@ export default function DashClass(params){
             </div>
             <div className={style.CardTres}>
                 <h1 className={style.nome_cardTres}>EDITE SEUS CURSOS</h1>
-                <div className={style.cursoeditar}>
-                    <a className={style.titulocurso}>CURSO A</a>
-                    <Link to="/teacher/courses/edit" className={style.link}> <button className={style.botaoeditar}> Editar</button></Link>
-                    <button className={style.botaoapagar} >Apagar</button>
-                </div>
+                
+                {post.map((course, key) => {
+                    return (
+                        <div className={style.cursoeditar}>
+                        <a className={style.titulocurso}>{course.courseName}</a>
+                        <Link to="/teacher/courses/edit" className={style.link}>
+                             <button className={style.botaoeditar}> Editar</button>
+                        </Link>
+                        <button className={style.botaoapagar} >Apagar</button>
+                    </div>
+                    )
+                })}
+               
             </div>
         </section>
     );
