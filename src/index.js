@@ -16,7 +16,7 @@ import AtividadeAluno from './Components/js.desing/StudentDashActivity/index.js'
 import AssistirAula from './Components/js.desing/StudentDashClass/AssistClassView/index';
 import VerCursos from './Components/js.desing/StudentDashCourses/index.js'
 import IrParaAtividade from './Components/js.desing/StudentDashActivity/LayoutAtividade/index.js'
-import IrParaMeuCurso from './Components/js.desing/StudentDashCourses/SobreMeusCursos/index.js'
+import IrParaMeuCurso from './Components/js.desing/StudentDashCourses/SobreMeusCurso/index.js'
 import IrParaaSobreCurso from './Components/js.desing/StudentDashCourses/SobreCurso/index.js'
 
 //ROTAS PROFESSOR
