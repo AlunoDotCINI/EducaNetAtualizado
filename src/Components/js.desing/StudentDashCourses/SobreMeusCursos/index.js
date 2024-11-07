@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import style from "./index.module.css";
 
-export default function SobreCurso() {
+export default function SobreMeusCursos() {
     const location = useLocation();
     const { course } = location.state || {}; // Obter dados do curso do estado
 
@@ -13,7 +13,7 @@ export default function SobreCurso() {
             <p className={style.enunciado}>
                 {course?.description || "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec consequat ipsum. Integer iaculis, tortor ut placerat mollis, libero risus mollis elit, quis viverra nisi quam sit amet magna..."}
             </p>
-            <button className={style.entre}>ENTRE</button>
+            <button className={style.sair}>SAIR DO CURSO</button>
         </div>
     );
 }
