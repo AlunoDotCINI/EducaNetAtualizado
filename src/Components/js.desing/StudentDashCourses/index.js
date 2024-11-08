@@ -18,16 +18,26 @@ export default function VerClass() {
     }, []);
     //###########################################################
 
+    const [postById, setPostById] = useState([]);
+    var id= sessionStorage.getItem("userId")
+
+    useEffect(() => {
+        api.get(`/CoursesById/${id}`)
+        .then((response) => {
+            setPostById(response.data);
+        })
+        .catch(() => {
+            console.log('erro ao editar esse curso');
+        });
+    });
+
+
     return (
         <section className={style.conteudo}>
             <div className={style.conteudocards}>
                 <div className={style.CardUm}>
                     <h1 className={style.nome_cardUm}>Cursos Cadastrados</h1>
-                    <div className={style.cursoscadastrados}>
-                        <a className={style.itens}>Morbi iaculis quis sapien at vehicula. </a>
-                        <button className={style.botaovercursoaberto}><Link to="/students/courses/seemycourse" className={style.link}> Ver Curso</Link></button>
-                    </div>
-                        {post.map((course, key4) => {
+                        {postById.map((course, key4) => {
                             return (
                                 <div className={style.verconteiner} key={key4}>
                                     <a className={style.itens}>{course.courseName}</a>
@@ -39,9 +49,9 @@ export default function VerClass() {
                 <div className={style.CardDois}>
                     <h1 className={style.nome_cardDois}>PROCURE CURSOS</h1>
                     <div className={style.vercurso}>
-                    {post.map((course, key4) => {
+                    {post.map((course, key5) => {
                             return (
-                                <div className={style.verconteiner} key={key4}>
+                                <div className={style.verconteiner} key={key5}>
                                     <a className={style.titulocurso}>{course.courseName}</a>
                                     <button className={style.botaovercurso}> <Link to="/students/courses/seecourse" className={style.link}>Ver Curso</Link></button>
                                 </div>

@@ -19,9 +19,10 @@ export default function DashClass(params){
     }, []);
 
     const [postById, setPost] = useState([]);
+    var id= sessionStorage.getItem("userId")
 
     useEffect(() => {
-        api.get("/course/courseId")
+        api.get(`/CoursesById/${id}`)
         .then((response) => {
             setPost(response.data);
         })
@@ -50,6 +51,7 @@ export default function DashClass(params){
                 
                 {post.map((course, key) => {
                     return (
+                       
                         <div className={style.cursoeditar}>
                         <a className={style.titulocurso}>{course.courseName}</a>
                         <Link to="/teacher/courses/edit" className={style.link}>

@@ -20,7 +20,7 @@ export default function EditCourse() {
     return (
         <div className={style.conteudo} >
             <div className={style.coteudocard}>
-                <h1 className={style.titulo}>EDITE SUA VÍDEO AULA</h1>
+                <h1 className={style.titulo}>EDITE SEU CURSO</h1>
                 <input type="text" className={style.entrada} onChange={(e) => setCourseName (e.target.value)} placeholder="NOME DO CURSO" />
                 <textarea className={style.area} onChange={(e) => setDescription (e.target.value) } placeholder="DESCRIÇÃO DO CURSO" />
                 <input type="text" className={style.entrada} onChange={(e) => setWorkLoad (e.target.value)} placeholder="HORAS DO CURSO" />
