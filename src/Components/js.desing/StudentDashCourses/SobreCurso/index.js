@@ -1,16 +1,90 @@
-import style from './index.module.css'
-export default function SobreCurso(){
-    return(
-        <div className={style.conteudo}>
-            <h1  className={style.titulo}>NOME DO CURSO</h1>
-            <h3 className={style.temacurso} >TEMA CURSO</h3>
-            <h3 className={style.descricao}>DESCRIÇÃO</h3>
-            <p className={style.enunciado}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec consequat ipsum. Integer iaculis, tortor ut placerat mollis, libero risus mollis elit, quis viverra nisi quam sit amet magna. Curabitur in nisi aliquam nisi lobortis rutrum. Mauris fermentum nunc a dui aliquet, at viverra libero ultricies. Curabitur tempus tellus vel ligula porttitor sodales. Sed risus est, dapibus eu purus vitae, placerat ullamcorper nisi. Integer urna libero, posuere at turpis eget, sagittis hendrerit augue. Ut eu sapien nibh. Maecenas facilisis molestie enim a vulputate. Nam ullamcorper ante eu lectus fringilla, sit amet pellentesque tellus commodo. Ut auctor lobortis dolor vitae ultrices. Curabitur elementum quam vel lacus consectetur pharetra. Vestibulum volutpat aliquet diam, vulputate consequat metus auctor et. In iaculis purus eget lacus pulvinar, vel sagittis massa commodo. Pellentesque pellentesque nulla a velit dignissim mollis. Duis sed volutpat felis. Fusce imperdiet tellus risus, sed tristique velit tempus non. Ut finibus magna et arcu lobortis sollicitudin. Nulla facilisi. In hac habitasse platea dictumst. Vestibulum ultricies leo sed tempor lobortis. Mauris volutpat aliquam fermentum. Donec pulvinar, libero eget sagittis gravida, quam eros aliquet mauris, quis euismod lorem tortor id nulla.
-            </p>
-            <button className={style.entre}>ENTRE</button>
-            
+import style from './index.module.css';
+import { useState, useEffect } from 'react';
+import api from '../../../Service/api';
+import { useNavigate } from 'react-router-dom'; // Importe o hook useNavigate
 
+
+
+
+export default function SobreCurso() {
+    const [post, setPost] = useState(null);  // Inicializa como null para verificar se os dados foram carregados
+    const [loading, setLoading] = useState(true); // Controla o estado de carregamento
+    const [error, setError] = useState(null);  // Controla mensagens de erro
+    const navigate = useNavigate(); // Instancia o hook de navegação
+    const id = sessionStorage.getItem('courseId');
+
+
+    const handleSubmit = async () => {
+        try {
+            const courseClass = sessionStorage.getItem('courseId');
+            if (!courseClass) {
+                console.log("courseClass não encontrado no sessionStorage");
+                return;
+            }
+
+            const userId = sessionStorage.getItem('userId');
+            if (!userId) {
+                console.log("userId não encontrado no sessionStorage");
+                return;
+            }
+
+            const response = await api.post('/JoinUserInCourse', {
+                userId: userId,
+                courseId: courseClass,
+            });
+
+            console.log(response.data);
+
+            sessionStorage.setItem('selectedCourse', JSON.stringify(response.data)); // Armazena o curso selecionado no sessionStorage
+            navigate('/students/courses'); // Redireciona para a página de cursos cadastrados
+        } catch (error) {
+            console.error("Erro ao associar o usuário ao curso", error);
+        }
+    };
+
+
+// dados do curso
+    useEffect(() => {
+        if (!id) {
+            setError("ID do curso não encontrado");
+            setLoading(false);
+            return;
+        }
+
+        api.get(`/course/${id}`)
+            .then((response) => {
+                setPost(response.data);
+                setLoading(false);
+            })
+            .catch(() => {
+                setError("Erro ao buscar o curso");
+                setLoading(false);
+            });
+    }, [id]);
+
+    if (loading) {
+        return <div>Carregando...</div>;
+    }
+
+    if (error) {
+        return <div>{error}</div>;
+    }
+
+    return (
+        <div className={style.conteudo}>
+            {post ? (
+                <>
+                    <h1 className={style.titulo}>{post.courseName}</h1>
+                    <h3 className={style.temacurso}>{post.courseClass || "TEMA CURSO"}</h3>
+                    <h3 className={style.descricao}>Carga Horaria: {post.workload}</h3>
+                    <p className={style.enunciado}>
+                        {post.description || "Lorem ipsum dolor sit amet, consectetur adipiscing elit..."}
+                    </p>
+                    <button className={style.entre} onClick={handleSubmit}>ENTRE</button>
+                </>
+            ) : (
+                <div>Curso não encontrado.</div>
+            )}
         </div>
-    )
+    );
 }
