@@ -20,7 +20,6 @@ export default function alunos(){
             <ul className={style.listdi}> 
             <Link to="/students"className={style.direcionador}><li><FontAwesomeIcon icon={faHouse} size="xs" style={{color: "#000000",}} className={style.logodash}/>HOME</li></Link>
             <Link to="/students/class"className={style.direcionador}><li className={style.direcionador}><FontAwesomeIcon icon={faGraduationCap} size="xs" style={{color: "#000000",}} className={style.logodash} />AULAS</li></Link>
-            <Link to="/students/activity"className={style.direcionador}><li className={style.direcionador}><FontAwesomeIcon icon={faBook} size="xs" style={{color: "#000000",}} className={style.logodash}/>PRATICANDO</li></Link>
             <Link to="/students/courses"className={style.direcionador}><li className={style.direcionador}><FontAwesomeIcon icon={faChartLine} size="xs" style={{color: "#000000",}} className={style.logodash}/>CURSOS</li></Link>
             </ul>
             <h1 className={style.perfil}>Perfil</h1>
