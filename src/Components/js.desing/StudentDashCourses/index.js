@@ -39,10 +39,12 @@ export default function VerClass() {
                 <div className={style.CardUm}>
                     <h1 className={style.nome_cardUm}>Cursos Cadastrados</h1>
                         {postById.map((course, key4) => {
-                      
+                        function setCourse(){
+                            sessionStorage.setItem("courseId",course.courseId)
+                        }
                             return (
                                 <div className={style.verconteiner} key={key4}>
-                                    <button className={style.botaovercurso}> <Link to="/students/courses/seemycourse" className={style.link}>Sair do curso</Link></button>
+                                    <button className={style.botaovercurso} onClick={setCourse}> <Link to="/students/courses/seemycourse" className={style.link}>Sair do curso</Link></button>
                                     <a className={style.itens}>{course.courseName}</a>
                                     
                                 </div>

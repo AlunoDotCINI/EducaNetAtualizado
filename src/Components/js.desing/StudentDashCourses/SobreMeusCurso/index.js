@@ -2,6 +2,10 @@ import style from './index.module.css'
 import { useState, useEffect } from 'react';
 import api from '../../../Service/api';
 import { useNavigate } from 'react-router-dom'; // Impor
+
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
 export default function SobreMeusCursos() {
 
     const [post, setPost] = useState(null);  // Inicializa como null para verificar se os dados foram carregados
@@ -9,6 +13,31 @@ export default function SobreMeusCursos() {
     const [error, setError] = useState(null);  // Controla mensagens de erro
     const navigate = useNavigate(); // Instancia o hook de navegação
     const id = sessionStorage.getItem('courseId');
+    const idUser = sessionStorage.getItem('userId');
+
+
+
+    const sairCurso = async () => {
+        try {
+            const response = await api.delete('/RemoveUserFromCourse', {
+                data: { userId: idUser, courseId: id } // Passa os dados no campo "data"
+            });
+            console.log(response.data);
+            navigate("/students");
+        } catch (error) {
+            Swal.fire({
+                title: 'Erro!',
+                text: 'Credenciais inválidas, tente novamente.',
+                icon: 'error',
+                confirmButtonText: 'Ok'
+            });
+            console.log(error);
+        }
+   };
+   
+    
+    
+
 
     useEffect(() => {
         if (!id) {
@@ -43,12 +72,11 @@ export default function SobreMeusCursos() {
             {post ? (
                 <>
                     <h1 className={style.titulo}>{post.courseName}</h1>
-                    <h3 className={style.temacurso} >{post.couseClass}</h3>
-                    <h3 className={style.descricao}>DESCRIÇÃO</h3>
+                    <h3 className={style.temacurso} >{post.courseClass}</h3>
                     <p className={style.enunciado}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec consequat ipsum. Integer iaculis, tortor ut placerat mollis, libero risus mollis elit, quis viverra nisi quam sit amet magna. Curabitur in nisi aliquam nisi lobortis rutrum. Mauris fermentum nunc a dui aliquet, at viverra libero ultricies. Curabitur tempus tellus vel ligula porttitor sodales. Sed risus est, dapibus eu purus vitae, placerat ullamcorper nisi. Integer urna libero, posuere at turpis eget, sagittis hendrerit augue. Ut eu sapien nibh. Maecenas facilisis molestie enim a vulputate. Nam ullamcorper ante eu lectus fringilla, sit amet pellentesque tellus commodo. Ut auctor lobortis dolor vitae ultrices. Curabitur elementum quam vel lacus consectetur pharetra. Vestibulum volutpat aliquet diam, vulputate consequat metus auctor et. In iaculis purus eget lacus pulvinar, vel sagittis massa commodo. Pellentesque pellentesque nulla a velit dignissim mollis. Duis sed volutpat felis. Fusce imperdiet tellus risus, sed tristique velit tempus non. Ut finibus magna et arcu lobortis sollicitudin. Nulla facilisi. In hac habitasse platea dictumst. Vestibulum ultricies leo sed tempor lobortis. Mauris volutpat aliquam fermentum. Donec pulvinar, libero eget sagittis gravida, quam eros aliquet mauris, quis euismod lorem tortor id nulla.
+                    {post.description}
                     </p>
-                    <button className={style.sair}>SAIR DO CURSO</button>
+                    <button className={style.sair} onClick={sairCurso}>SAIR DO CURSO</button>
                 </>
             ) : (
                 <div>Curso não encontrado.</div>
