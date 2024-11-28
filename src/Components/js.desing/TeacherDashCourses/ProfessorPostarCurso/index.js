@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import style from "./index.module.css";
 import api from "../../../Service/api";
 import Swal from 'sweetalert2'; // Import SweetAlert2
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 export default function PostCourse() {

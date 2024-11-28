@@ -2,12 +2,24 @@
 
 .conteudo {
     padding: 40px;
+    display: flex;
+    gap: 30px;
 }
 
 .coteudocard {
     padding: 20px;
     background-color: #00A3FF;
     width: 980px;
+    height: 780px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.coteudocardtres{
+    padding: 20px;
+    background-color: #00A3FF;
+    width: 480px;
     height: 780px;
     border-radius: 20px;
     display: flex;
@@ -50,4 +62,58 @@
     border-style: none;
     border-radius: 20px;
     color: #ffffff;
+}
+
+.coteudocardtres {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #00A3FF;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.userItem {
+    display: flex;
+    justify-content: space-between;  /* Alinha o nome e o botão nas extremidades */
+    align-items: center;  /* Alinha verticalmente o nome e o botão */
+    margin-bottom: 15px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    gap: 10px;
+}
+
+.userItem span {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+.userButton {
+    padding: 8px 15px;
+    background-color: #af4c4c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.userButton:hover {
+    background-color: #6a0909;
+}
+
+.userButton:active {
+    background-color: #6a0909;
 }

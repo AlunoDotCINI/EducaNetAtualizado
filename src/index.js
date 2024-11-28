@@ -27,6 +27,7 @@ import ProfessorAtividadeEditar from './Components/js.desing/TeacherDashActivity
 //professor video aula postar e editar
 import ProfessorClasse from './Components/js.desing/TeacherDashClass/index.js'
 import ProfessorClassePostarVideo from './Components/js.desing/TeacherDashClass/ProfessorPostarAula/index.js'
+import ProfessorClasseEditarVideo from './Components/js.desing/TeacherDashClass/ProfessorEditarAula/index.js'
 //professor postar curso e editar
 import ProfessorCurso from './Components/js.desing/TeacherDashCourses/index.js'
 import ProfessorPostarCurso from './Components/js.desing/TeacherDashCourses/ProfessorPostarCurso/index.js'
@@ -58,20 +59,7 @@ const router = createBrowserRouter([
           },
           {
             path: "/teacher/class/edit",
-            element:<ProfessorEditarCurso/>
-          },
-
-          {
-            path: "/teacher/activity",
-            element: <ProfessorAtividade />
-          },
-          {
-            path: "/teacher/activity/post",
-            element: <ProfessorAtividadePostar/>
-          },
-          {
-            path: "/teacher/activity/edit",
-            element: <ProfessorAtividadeEditar />
+            element:<ProfessorClasseEditarVideo/>
           },
           {
             path: "/teacher/courses",

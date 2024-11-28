@@ -18,42 +18,72 @@ export default function DashClass() {
       });
   }, []);
 
-  const [postById, setPostById] = useState([]);
-  var id = sessionStorage.getItem("userId");
 
-  useEffect(() => {
-    api.get(`/CoursesById/${id}`)
-      .then((response) => {
-        setPostById(response.data);
-      })
-      .catch(() => {
-        console.log('Erro ao buscar cursos por ID');
-      });
-  }, [id]);
-
-  // Função para deletar um curso
   const deleteCourse = async (courseId) => {
     try {
+      // Fazendo a requisição DELETE
       const response = await api.delete(`/course/deleteCourse/${courseId}`);
+      
+      // Exibe o conteúdo da resposta para depuração (opcional)
       console.log(response.data);
-      // Atualiza a lista de cursos após a exclusão
-      setPost(post.filter(course => course.courseId !== courseId));
+  
+
+      if(response.data== "Há usuários ativos no curso!"){
+        Swal.fire({
+          title: 'Erro!',
+          text: 'Há usuários ativos no curso!',
+          icon: 'error',
+          confirmButtonText: 'Ok'
+        });
+      
+      }
+      else{
       Swal.fire({
         title: 'Sucesso!',
         text: 'Curso deletado com sucesso!',
         icon: 'success',
         confirmButtonText: 'Ok'
       });
+
+      setPost(post.filter(course => course.courseId !== courseId));
+
+    }
+  
     } catch (error) {
+      // Lógica para tratar os diferentes tipos de erro com base no status HTTP
+      let errorMessage = 'Não foi possível deletar o curso. Tente novamente.';
+  
+      if (error.response) {
+        const status = error.response.status;
+        const message = error.response.data;
+  
+        if (status === 404) {
+          // Curso não encontrado
+          errorMessage = 'Curso não encontrado! Não foi possível deletar.';
+        } else if (status === 409) {
+          // Há usuários ativos no curso
+          errorMessage = 'Não foi possível excluir o curso. Há usuários ativos no curso.';
+        }
+      } else if (error.request) {
+        // Se não houve resposta do servidor
+        errorMessage = 'Problema de conexão. Não foi possível se conectar ao servidor.';
+      } else {
+        // Erro desconhecido
+        errorMessage = 'Ocorreu um erro desconhecido. Tente novamente.';
+      }
+  
+      // Exibe a mensagem de erro no modal
       Swal.fire({
         title: 'Erro!',
-        text: 'Não foi possível deletar o curso. Tente novamente.',
+        text: errorMessage,
         icon: 'error',
         confirmButtonText: 'Ok'
       });
+  
+      // Exibe detalhes do erro no console (para depuração)
       console.log(error);
     }
-  }
+  };
 
   return (
     <section className={style.conteudo}>
@@ -79,11 +109,11 @@ export default function DashClass() {
             <div key={key} className={style.cursoeditar}>
               <a className={style.titulocurso}>{course.courseName}</a>
               <Link to="/teacher/courses/edit" className={style.link}>
-                <button className={style.botaoeditar}>Editar</button>
+                <button className={style.botaoeditar}  onClick={() => sessionStorage.setItem('currentCourseId', course.courseId)} >Editar</button>
               </Link>
               <button 
                 className={style.botaoapagar} 
-                onClick={() => deleteCourse(course.courseId)}  // Passa o ID do curso para deleteCourse
+                onClick={() => deleteCourse(course.courseId)}  
               >
                 Apagar
               </button>
